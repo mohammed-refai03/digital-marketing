@@ -142,11 +142,17 @@
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" placeholder="••••••••" required>
+                    <div style="position: relative;">
+                        <input type="password" placeholder="••••••••" required id="passwordInput1" style="padding-right: 45px;">
+                        <i class="fa-regular fa-eye" id="togglePassword1" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--text-muted); font-size: 1.1rem;"></i>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Confirm Password</label>
-                    <input type="password" placeholder="••••••••" required>
+                    <div style="position: relative;">
+                        <input type="password" placeholder="••••••••" required id="passwordInput2" style="padding-right: 45px;">
+                        <i class="fa-regular fa-eye" id="togglePassword2" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--text-muted); font-size: 1.1rem;"></i>
+                    </div>
                 </div>
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 35px; font-size: 0.85rem;">
                     <label style="color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 8px;">
@@ -190,6 +196,21 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        function setupToggle(toggleId, inputId) {
+            const toggle = document.getElementById(toggleId);
+            const input = document.getElementById(inputId);
+            if (toggle && input) {
+                toggle.addEventListener('click', function () {
+                    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                    input.setAttribute('type', type);
+                    this.classList.toggle('fa-eye-slash');
+                });
+            }
+        }
+        setupToggle('togglePassword1', 'passwordInput1');
+        setupToggle('togglePassword2', 'passwordInput2');
+    </script>
 </body>
 </html>
 

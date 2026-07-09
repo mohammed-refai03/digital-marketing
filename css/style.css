@@ -1297,8 +1297,8 @@ img, video {
 }
 
 /* Prevent Edge password reveal icon */
-input[type='password']::-ms-reveal,
-input[type='password']::-ms-clear {
+input::-ms-reveal,
+input::-ms-clear {
     display: none;
 }
 
