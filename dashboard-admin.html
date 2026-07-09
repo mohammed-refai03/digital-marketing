@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campaign Console | DigiPulse Platform</title>
+    <title>Campaign Console | Stackly Platform</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@
                 <div class="avatar user-dynamic-avatar" style="flex-shrink: 0;">A</div>
                 <div class="info left-align" style="overflow: hidden;">
                     <div class="role user-dynamic-role">Growth Partner (Client)</div>
-                    <div class="email user-dynamic-email" style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; max-width: 150px;">commander@digipulse.ai</div>
+                    <div class="email user-dynamic-email" style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; max-width: 150px;">commander@stackly.ai</div>
                 </div>
             </div>
             <a href="index.html" class="logout-link" style="color: #ef4444; padding: 10px 0;">
@@ -70,7 +70,7 @@
                     <div class="user-profile-widget hide-mobile" style="display: flex; align-items: center; gap: 12px; text-align: right;">
                         <div class="info">
                             <div class="role user-dynamic-role" style="font-weight: 700; font-size: 0.85rem; color: #0f172a;">Growth Partner (Client)</div>
-                            <div class="email user-dynamic-email" style="font-size: 0.75rem; color: #64748b;">commander@digipulse.ai</div>
+                            <div class="email user-dynamic-email" style="font-size: 0.75rem; color: #64748b;">commander@stackly.ai</div>
                         </div>
                         <div class="avatar user-dynamic-avatar" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #0d9488; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #0d9488; background: #e6f6f4;">A</div>
                     </div>
@@ -380,7 +380,10 @@
 
                     if (window.innerWidth <= 1024) {
                         const sidebar = document.getElementById('sidebar');
-                        if (sidebar) sidebar.classList.remove('active');
+                        if (sidebar) {
+                            sidebar.classList.remove('active');
+                            document.body.classList.remove('no-scroll');
+                        }
                     }
                 });
             });
@@ -391,6 +394,7 @@
         if(menuToggle) {
             menuToggle.addEventListener('click', () => {
                 document.getElementById('sidebar').classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
             });
         }
         

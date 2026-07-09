@@ -1301,3 +1301,14 @@ input[type='password']::-ms-reveal,
 input[type='password']::-ms-clear {
     display: none;
 }
+
+/* Bulletproof prevent scrolling when mobile menu is open */
+body.no-scroll {
+    overflow: hidden !important;
+    height: 100vh !important;
+    touch-action: none !important;
+}
+.nav-links, .sidebar {
+    touch-action: auto !important; /* Allow drawer to scroll if needed */
+}
+

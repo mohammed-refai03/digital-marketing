@@ -28,6 +28,7 @@ if (navToggle && navLinks) {
     navToggle.addEventListener('click', (e) => {
         e.stopPropagation();
         navLinks.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
         if (navToggle.innerText === '☰' || navToggle.innerText === '✕') {
             navToggle.innerText = navLinks.classList.contains('active') ? '✕' : '☰';
         }
@@ -40,6 +41,7 @@ document.addEventListener('click', (e) => {
     if (window.innerWidth <= 768) {
         if (navLinks && navLinks.classList.contains('active') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
             navLinks.classList.remove('active');
+            document.body.classList.remove('no-scroll');
             if (navToggle.innerText === '✕') navToggle.innerText = '☰';
         }
     }
@@ -50,6 +52,7 @@ document.addEventListener('click', (e) => {
     if (window.innerWidth <= 991) {
         if (dashboardSidebar && dashboardSidebar.classList.contains('active') && !dashboardSidebar.contains(e.target) && !dashboardMenuToggle.contains(e.target)) {
             dashboardSidebar.classList.remove('active');
+            document.body.classList.remove('no-scroll');
         }
     }
 });
