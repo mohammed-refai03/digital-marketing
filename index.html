@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DigiPulse | AI-Driven Omni-Channel Marketing</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <meta name="description" content="DigiPulse utilizes AI and big data to dominate social platforms, scale user acquisition, and drastically reduce CPA for forward-thinking brands." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="icon" type="image/webp" href="assets/stackly logo RED.webp">
+    <style>
+        .team-card {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+        .team-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .team-image-container {
+            overflow: hidden;
+            height: 320px;
+        }
+        .team-image {
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .team-card:hover .team-image {
+            transform: scale(1.1);
+        }
+        .glow-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
+        }
+        .glow-card:hover {
+            transform: scale(1.04);
+            border-color: var(--primary) !important;
+            background: var(--white) !important;
+            box-shadow: 0 0 30px rgba(222, 31, 38, 0.15) !important;
+        }
+        .flip-card {
+            perspective: 1000px;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover {
+            transform: rotateY(10deg) rotateX(5deg);
+            background: var(--light-bg) !important;
+            border-color: var(--primary) !important;
+        }
+        @media (max-width: 450px) {
+            .algo-matrix-grid {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+            }
+            .algo-matrix-grid h2 {
+                font-size: 2.2rem !important;
+                line-height: 1.2 !important;
+            }
+            .algo-matrix-grid p {
+                font-size: 1rem !important;
+                line-height: 1.6 !important;
+                margin-bottom: 30px !important;
+            }
+            .algo-matrix-card-content {
+                padding: 20px !important;
+            }
+            .roi-stat-box {
+                bottom: 15px !important;
+                right: 15px !important;
+                padding: 10px 15px !important;
+            }
+            .roi-stat-box h2 {
+                font-size: 1.2rem !important;
+            }
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-33.33%); }
+        }
+        .marquee-wrapper {
+            overflow: hidden;
+            width: 100%;
+            padding: 20px 0;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .marquee-content {
+            display: flex;
+            gap: 80px;
+            animation: marquee 20s linear infinite;
+            width: max-content;
+        }
+    </style>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+  <body>
+    <!-- Preloader -->
+    <div class="bankio-loader">
+      <div class="bankio-loader-text">DIGIPULSE AI</div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="assets/stackly logo RED.webp" alt="Stackly Logo" style="height: 100px; vertical-align: middle;" />
+        </a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="nav-mobile-only"><a href="login.html">Login</a></li>
+          </ul>
+        </nav>
+        <div class="header-btns">
+          <a href="login.html" class="btn btn-primary">Login</a>
+        </div>
+        <button id="navToggle" class="nav-toggle" >☰</button>
+      </div>
+    </header>
+
+    <!-- Hero Section: Omni-Channel AI Focus -->
+    <section class="hero-section" style="position: relative;">
+      <img src="assets/team_strat.webp" class="hero-video" alt="Hero Background" style="object-fit:cover; pointer-events:none; position:absolute; inset:0; width:100%; height:100%;">
+      <div class="hero-overlay"></div>
+      <div class="container text-center">
+        <!-- <div class="badge-elite" data-aos="fade-down">#1 AI-Marketing Apparatus 2026</div> -->
+        <h1 data-aos="fade-up" data-aos-duration="1000">
+          Dominate Your Market <br /><span class="gradient-text">Through Data Intelligence</span>
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 30px; font-weight: 400;">
+          Supercharge your brand visibility. We harness advanced AI models to architect viral campaigns, execute precision omni-channel media buying, and drop your Cost Per Acquisition to zero.
+        </p>
+        
+        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+            <a href="contact.html" class="btn btn-primary" style="padding: 16px 40px; font-size: 1.1rem; font-weight: 700;">Initiate Audit</a>
+        </div>
+  
+        <p style="margin-top: 20px; font-size: 0.85rem; color: var(--text-muted); opacity: 0.7;">* AI-powered landscape audit ready in precisely 45 seconds.</p>
+      </div>
+    </section>
+
+  
+
+    
+    <!-- 1. The Problem Agitator -->
+    <section class="section-padding" style="background: var(--dark); border-top: 1px solid rgba(255,255,255,0.1);">
+      <div class="container text-center">
+        <h4 style="color: var(--primary); margin-bottom: 15px; letter-spacing: 2px; font-weight: 700; text-transform: uppercase;" data-aos="fade-up">Current Reality</h4>
+        <h2 style="margin-bottom: 50px; color: var(--white);" data-aos="fade-up" data-aos-delay="100">Scaling Shouldn't Feel Like Guesswork</h2>
+        
+        <div class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));">
+            <div class="pricing-card reveal" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); padding: 30px; text-align: left;">
+                <i data-lucide="trending-down" style="width: 40px; height: 40px; color: #ef4444; margin-bottom: 20px;"></i>
+                <h3 style="color: var(--white); margin-bottom: 15px; font-size: 1.2rem;">Wasting Retainers</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Pouring thousands into agency fees with zero transparency and declining ROI across all major ad platforms.</p>
+            </div>
+            <div class="pricing-card reveal" data-aos-delay="100" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); padding: 30px; text-align: left;">
+                <i data-lucide="bar-chart-2" style="width: 40px; height: 40px; color: #ef4444; margin-bottom: 20px;"></i>
+                <h3 style="color: var(--white); margin-bottom: 15px; font-size: 1.2rem;">Stagnant Growth</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Hitting a hard ceiling on organic traffic and lead velocity, unable to break through the algorithm updates.</p>
+            </div>
+            <div class="pricing-card reveal" data-aos-delay="200" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); padding: 30px; text-align: left;">
+                <i data-lucide="users" style="width: 40px; height: 40px; color: #ef4444; margin-bottom: 20px;"></i>
+                <h3 style="color: var(--white); margin-bottom: 15px; font-size: 1.2rem;">Misaligned Audiences</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Driving clicks that never convert because your messaging isn't matched to the neural intent of the consumer.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Core Services Overview -->
+    <section class="section-padding" style="background: var(--light-bg);">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 60px">
+          <h4 style="color: var(--primary); margin-bottom: 15px; letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">Our Arsenal</h4>
+          <h2 style="margin-bottom: 20px; color: var(--dark);">Omni-Channel Domination</h2>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card glow-card reveal" style="padding: 40px 30px; text-align: left; background: var(--white); border: 1px solid var(--border); display: flex; flex-direction: column; height: 100%;">
+                <i data-lucide="target" style="width: 48px; height: 48px; color: var(--primary); margin-bottom: 20px;"></i>
+                <h3 style="color: var(--dark); margin-bottom: 15px;">Paid Performance</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px;">We don't just run ads. We deploy machine-learning models to find high-intent buyers, drastically reducing your CPA across Meta, Google, and TikTok.</p>
+                <div style="font-weight: 700; color: #10B981; font-size: 0.9rem; margin-top: auto;">OUTCOME: Immediate Revenue Scalability</div>
+            </div>
+            <div class="pricing-card glow-card reveal" data-aos-delay="100" style="padding: 40px 30px; text-align: left; background: var(--white); border: 1px solid var(--border);">
+                <i data-lucide="search" style="width: 48px; height: 48px; color: var(--primary); margin-bottom: 20px;"></i>
+                <h3 style="color: var(--dark); margin-bottom: 15px;">SEO & Organic Authority</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px;">Capture search intent globally. We restructure your technical foundation and inject high-authority content that search algorithms inherently prioritize.</p>
+                <div style="font-weight: 700; color: #10B981; font-size: 0.9rem; margin-top: auto;">OUTCOME: Compounding Free Traffic</div>
+            </div>
+            <div class="pricing-card glow-card reveal" data-aos-delay="200" style="padding: 40px 30px; text-align: left; background: var(--white); border: 1px solid var(--border);">
+                <i data-lucide="mouse-pointer-click" style="width: 48px; height: 48px; color: var(--primary); margin-bottom: 20px;"></i>
+                <h3 style="color: var(--dark); margin-bottom: 15px;">Conversion Rate Optimization</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px;">Traffic is useless if it doesn't convert. We utilize heatmaps and A/B split-testing protocols to plug funnel leaks and maximize your LTV.</p>
+                <div style="font-weight: 700; color: #10B981; font-size: 0.9rem; margin-top: auto;">OUTCOME: Maximized User Value</div>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 50px;" data-aos="fade-up">
+            <a href="404.html" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">Explore All Capabilities</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Big Win Case Studies -->
+    <section class="section-padding" style="background: var(--white);">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 60px">
+          <h4 style="color: var(--primary); margin-bottom: 15px; letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">Proof of Action</h4>
+          <h2 style="margin-bottom: 20px; color: var(--dark);">We Let The Data Speak</h2>
+        </div>
+        <div class="algo-matrix-grid" style="display: grid; grid-template-columns: 1fr; gap: 40px;">
+            <!-- Case Study 1 -->
+            <div class="reveal res-grid-2" data-aos="fade-up" style="align-items: center; background: var(--light-bg); border-radius: 20px; overflow: hidden; border: 1px solid var(--border);">
+                <div style="padding: 40px;">
+                    <h3 style="font-family: 'Space Grotesk'; font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 10px; line-height: 1.2;">Generated 412% More Leads for Apex Retail in 90 Days</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.05rem;">We audited their leaky funnel, injected our server-side tracking, and deployed cognitive media buying across TikTok and Meta.</p>
+                    <div style="display: flex; gap: 20px;">
+                        <div style="padding-right: 20px; border-right: 1px solid #ccc;">
+                            <p style="font-size: 0.8rem; color: #ef4444; font-weight: 700; text-transform: uppercase; margin-bottom: 5px;">BEFORE</p>
+                            <p style="font-size: 1.2rem; font-weight: 800; color: var(--dark);">$45 CPA</p>
+                        </div>
+                        <div>
+                            <p style="font-size: 0.8rem; color: #10B981; font-weight: 700; text-transform: uppercase; margin-bottom: 5px;">AFTER</p>
+                            <p style="font-size: 1.2rem; font-weight: 800; color: var(--dark);">$12 CPA</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 100%; min-height: 300px; background: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800') center/cover;"></div>
+            </div>
+            
+            <!-- Case Study 2 -->
+            <div class="reveal res-grid-2" data-aos="fade-up" style="align-items: center; background: var(--light-bg); border-radius: 20px; overflow: hidden; border: 1px solid var(--border);">
+                <div style="height: 100%; min-height: 300px; background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800') center/cover; order: -1;"></div>
+                <div style="padding: 40px;">
+                    <h3 style="font-family: 'Space Grotesk'; font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 10px; line-height: 1.2;">Scaled E-Com Revenue from $50k to $1.2M Monthly</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.05rem;">By integrating our proprietary Predictive Trend Engineering models, we caught consumer waves weeks before competitors.</p>
+                    <div style="display: flex; gap: 20px;">
+                        <div style="padding-right: 20px; border-right: 1px solid #ccc;">
+                            <p style="font-size: 0.8rem; color: #ef4444; font-weight: 700; text-transform: uppercase; margin-bottom: 5px;">BEFORE</p>
+                            <p style="font-size: 1.2rem; font-weight: 800; color: var(--dark);">1.2x ROAS</p>
+                        </div>
+                        <div>
+                            <p style="font-size: 0.8rem; color: #10B981; font-weight: 700; text-transform: uppercase; margin-bottom: 5px;">AFTER</p>
+                            <p style="font-size: 1.2rem; font-weight: 800; color: var(--dark);">4.8x ROAS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 50px;" data-aos="fade-up">
+            <a href="404.html" class="btn btn-secondary" style="padding: 15px 40px; font-size: 1.1rem;">View Full Portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. The Unique Selling Proposition -->
+    <section class="section-padding" style="background: var(--dark);">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 60px">
+          <h4 style="color: var(--primary); margin-bottom: 15px; letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">Why DigiPulse</h4>
+          <h2 style="margin-bottom: 20px; color: var(--white);">The Anti-Agency Model</h2>
+          <p style="max-width: 700px; margin: 0 auto; color: var(--text-muted);">We built DigiPulse because we were tired of the traditional agency model: slow execution, junior account managers, and hidden data.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card reveal" style="background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.1); padding: 30px; text-align: left;">
+                <h3 style="color: var(--white); margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;"><i data-lucide="shield-check" style="color: var(--primary); flex-shrink: 0; margin-top: 3px;"></i>Proprietary Data</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">You own your data. Our custom live dashboards give you 100% transparency into exactly where every penny goes in real-time.</p>
+            </div>
+            <div class="pricing-card reveal" data-aos-delay="100" style="background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.1); padding: 30px; text-align: left;">
+                <h3 style="color: var(--white); margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;"><i data-lucide="unlock" style="color: var(--primary); flex-shrink: 0; margin-top: 3px;"></i>No Long-Term Contracts</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">We don't lock you in. We operate on month-to-month sprint cycles because we believe we should earn your business every 30 days.</p>
+            </div>
+            <div class="pricing-card reveal" data-aos-delay="200" style="background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.1); padding: 30px; text-align: left;">
+                <h3 style="color: var(--white); margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;"><i data-lucide="user-check" style="color: var(--primary); flex-shrink: 0; margin-top: 3px;"></i>Senior Strategists Only</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">No interns. Your account is managed directly by seasoned veterans who have overseen millions in profitable ad spend.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Our Signature Framework -->
+    <section class="section-padding" style="background: var(--light-bg);">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 60px">
+          <h4 style="color: var(--primary); margin-bottom: 15px; letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">The Blueprint</h4>
+          <h2 style="margin-bottom: 20px; color: var(--dark);">How We Scale Your Brand</h2>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 30px; max-width: 900px; margin: 0 auto; position: relative;">
+            <!-- Connecting Line -->
+            <div style="position: absolute; left: 40px; top: 0; bottom: 0; width: 2px; background: var(--primary); opacity: 0.2; z-index: 0;" class="hide-mobile"></div>
+            
+            <div class="reveal" data-aos="fade-left" style="display: flex; align-items: flex-start; gap: 30px; position: relative; z-index: 1;">
+                <div style="width: 80px; height: 80px; background: var(--primary); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800; flex-shrink: 0; box-shadow: 0 10px 20px rgba(222, 31, 38, 0.3);">1</div>
+                <div style="background: var(--white); padding: 30px; border-radius: 15px; border: 1px solid var(--border); width: 100%;">
+                    <h3 style="margin-bottom: 10px;">The Audit & Blueprint</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">We dive deep into your historical data, identifying funnel friction, wasted ad spend, and immediate low-hanging fruit to capture.</p>
+                </div>
+            </div>
+            <div class="reveal" data-aos="fade-left" data-aos-delay="100" style="display: flex; align-items: flex-start; gap: 30px; position: relative; z-index: 1;">
+                <div style="width: 80px; height: 80px; background: var(--dark); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800; flex-shrink: 0;">2</div>
+                <div style="background: var(--white); padding: 30px; border-radius: 15px; border: 1px solid var(--border); width: 100%;">
+                    <h3 style="margin-bottom: 10px;">Infrastructure & Pixel Mapping</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Before spending a dollar, we implement server-side tracking and CRM integrations to ensure 100% data fidelity.</p>
+                </div>
+            </div>
+            <div class="reveal" data-aos="fade-left" data-aos-delay="200" style="display: flex; align-items: flex-start; gap: 30px; position: relative; z-index: 1;">
+                <div style="width: 80px; height: 80px; background: var(--dark); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800; flex-shrink: 0;">3</div>
+                <div style="background: var(--white); padding: 30px; border-radius: 15px; border: 1px solid var(--border); width: 100%;">
+                    <h3 style="margin-bottom: 10px;">Creative Injection</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Our studio produces dozens of high-converting UGC videos, graphics, and ad copy variants designed specifically for algorithms.</p>
+                </div>
+            </div>
+            <div class="reveal" data-aos="fade-left" data-aos-delay="300" style="display: flex; align-items: flex-start; gap: 30px; position: relative; z-index: 1;">
+                <div style="width: 80px; height: 80px; background: var(--dark); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800; flex-shrink: 0;">4</div>
+                <div style="background: var(--white); padding: 30px; border-radius: 15px; border: 1px solid var(--border); width: 100%;">
+                    <h3 style="margin-bottom: 10px;">Omni-Channel Scale</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">We turn on the traffic firehose, using machine learning to bid aggressively on winning creatives while shutting off losers.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. High-Impact Testimonial Slider -->
+    <section class="section-padding" style="background: var(--light-bg);">
+      <div class="container text-center reveal">
+        <h4 style="color: var(--primary); margin-bottom: 15px; letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">Verified Outcomes</h4>
+        <h2 style="margin-bottom: 40px; color: var(--dark);">Client Transmissions</h2>
+        <div class="swiper testimonial-swiper" style="padding: 20px 15px 50px 15px; margin: -20px -15px 0 -15px;">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide" style="height: auto;">
+                    <div style="background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 40px 30px; text-align: left; height: 100%; display: flex; flex-direction: column; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.02);" onmouseenter="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)'; this.style.borderColor='var(--primary)';" onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)'; this.style.borderColor='var(--border)';">
+                        <i data-lucide="quote" style="width: 40px; height: 40px; color: var(--primary); opacity: 0.2; margin-bottom: 20px;"></i>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 30px; flex-grow: 1;">
+                            "DigiPulse didn't just run ads. They rebuilt our entire customer acquisition engine. Our CPA dropped from $45 to $12, and we scaled from 100 to 5,000 daily leads. Absolutely terrifying precision."
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid var(--border); padding-top: 20px;">
+                            <img src="assets/ext_6b446d2b.webp" alt="Marcus Corvin" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <h4 style="font-size: 1rem; margin-bottom: 2px; color: var(--dark);">Marcus Corvin</h4>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">CMO, NeuroTech</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide" style="height: auto;">
+                    <div style="background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 40px 30px; text-align: left; height: 100%; display: flex; flex-direction: column; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.02);" onmouseenter="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)'; this.style.borderColor='var(--primary)';" onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)'; this.style.borderColor='var(--border)';">
+                        <i data-lucide="quote" style="width: 40px; height: 40px; color: var(--primary); opacity: 0.2; margin-bottom: 20px;"></i>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 30px; flex-grow: 1;">
+                            "We were burning cash on Facebook until their Cognitive Media Buying model audited our tracking structure. We hit $2.1M monthly recurring revenue the very next quarter."
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid var(--border); padding-top: 20px;">
+                            <img src="assets/ext_f69a435f.webp" alt="Sarah Lin" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <h4 style="font-size: 1rem; margin-bottom: 2px; color: var(--dark);">Sarah Lin</h4>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">VP Growth, Apex Retail</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide" style="height: auto;">
+                    <div style="background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 40px 30px; text-align: left; height: 100%; display: flex; flex-direction: column; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.02);" onmouseenter="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)'; this.style.borderColor='var(--primary)';" onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)'; this.style.borderColor='var(--border)';">
+                        <i data-lucide="quote" style="width: 40px; height: 40px; color: var(--primary); opacity: 0.2; margin-bottom: 20px;"></i>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 30px; flex-grow: 1;">
+                            "The Viral Velocity Matrix they plug you into isn't just marketing. It's a localized monopoly. No one in our vertical can compete with this volume of organic traffic."
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid var(--border); padding-top: 20px;">
+                            <img src="assets/ext_d4ebd88e.webp" alt="Jonathan Draven" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <h4 style="font-size: 1rem; margin-bottom: 2px; color: var(--dark);">Jonathan Draven</h4>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">Founder, V-Labs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="swiper-slide" style="height: auto;">
+                    <div style="background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 40px 30px; text-align: left; height: 100%; display: flex; flex-direction: column; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.02);" onmouseenter="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)'; this.style.borderColor='var(--primary)';" onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)'; this.style.borderColor='var(--border)';">
+                        <i data-lucide="quote" style="width: 40px; height: 40px; color: var(--primary); opacity: 0.2; margin-bottom: 20px;"></i>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 30px; flex-grow: 1;">
+                            "I was skeptical of 'AI Copywriting', but their models consistently beat our in-house copywriters by 30-40% on conversion rates. The data doesn't lie."
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid var(--border); padding-top: 20px;">
+                            <img src="assets/ext_6d4cd1bf.webp" alt="Chloe Davis" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <h4 style="font-size: 1rem; margin-bottom: 2px; color: var(--dark);">Chloe Davis</h4>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">Director of Marketing, CloudSync</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="swiper-slide" style="height: auto;">
+                    <div style="background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 40px 30px; text-align: left; height: 100%; display: flex; flex-direction: column; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.02);" onmouseenter="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)'; this.style.borderColor='var(--primary)';" onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)'; this.style.borderColor='var(--border)';">
+                        <i data-lucide="quote" style="width: 40px; height: 40px; color: var(--primary); opacity: 0.2; margin-bottom: 20px;"></i>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 30px; flex-grow: 1;">
+                            "Their transparent dashboards finally showed us exactly where our ad spend was bleeding. We cut 20% of wasted budget and re-invested it into winning creatives."
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid var(--border); padding-top: 20px;">
+                            <img src="assets/ext_c4bf0b27.webp" alt="David Sterling" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <h4 style="font-size: 1rem; margin-bottom: 2px; color: var(--dark);">David Sterling</h4>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">CEO, FinTech Direct</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="swiper-slide" style="height: auto;">
+                    <div style="background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 40px 30px; text-align: left; height: 100%; display: flex; flex-direction: column; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.02);" onmouseenter="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.08)'; this.style.borderColor='var(--primary)';" onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.02)'; this.style.borderColor='var(--border)';">
+                        <i data-lucide="quote" style="width: 40px; height: 40px; color: var(--primary); opacity: 0.2; margin-bottom: 20px;"></i>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 30px; flex-grow: 1;">
+                            "Month over month growth has been incredible. Their team acts as an extension of ours, not just a typical hands-off agency. Highly recommend DigiPulse."
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid var(--border); padding-top: 20px;">
+                            <img src="assets/ext_a995f470.webp" alt="Aisha Patel" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <h4 style="font-size: 1rem; margin-bottom: 2px; color: var(--dark);">Aisha Patel</h4>
+                                <p style="font-size: 0.8rem; color: var(--text-muted);">Co-Founder, StyleNova</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination & Navigation -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev" style="color: var(--primary);"></div>
+            <div class="swiper-button-next" style="color: var(--primary);"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Meet the Strategists -->
+    <section class="section-padding" style="background: var(--white);">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 60px">
+          <h4 style="color: var(--primary); margin-bottom: 15px; letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">Command Core</h4>
+          <h2 style="margin-bottom: 20px; color: var(--dark);">Architects of Growth</h2>
+          <p style="max-width: 700px; margin: 0 auto; color: var(--text-muted);">Over 35 years of combined experience and $250M+ in collective ad spend managed.</p>
+        </div>
+        <div class="res-grid-3" style=" gap: 30px;">
+            <div class="pricing-card team-card reveal" data-aos="fade-up" style="padding: 0; overflow: hidden; background: var(--light-bg); border: none;">
+                <div class="team-image-container" style="position: relative; overflow: hidden; cursor: pointer;" onmouseenter="this.querySelector('.social-overlay').style.opacity='1';" onmouseleave="this.querySelector('.social-overlay').style.opacity='0';">
+                    <img src="assets/uifaces-popular-avatar (1).webp" alt="Julian Cross" class="team-image" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="social-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; gap: 15px; opacity: 0; transition: opacity 0.3s ease;">
+                        <a href="404.html" style="width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)';" onmouseleave="this.style.transform='scale(1)';"><i class="fa-brands fa-linkedin-in" style="font-size: 1.2rem;"></i></a>
+                        <a href="404.html" style="width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)';" onmouseleave="this.style.transform='scale(1)';"><i class="fa-brands fa-x-twitter" style="font-size: 1.2rem;"></i></a>
+                    </div>
+                </div>
+                <div style="padding: 25px; text-align: left;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--dark);">Julian Cross</h3>
+                    <p style="color: var(--primary); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px;">Founder & CEO</p>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Ex-Meta engineer. Orchestrated $100M+ in acquisition budgets.</p>
+                </div>
+            </div>
+            <div class="pricing-card team-card reveal" data-aos-delay="100" style="padding: 0; overflow: hidden; background: var(--light-bg); border: none;">
+                <div class="team-image-container" style="position: relative; overflow: hidden; cursor: pointer;" onmouseenter="this.querySelector('.social-overlay').style.opacity='1';" onmouseleave="this.querySelector('.social-overlay').style.opacity='0';">
+                    <img src="assets/uifaces-popular-avatar (3).webp" alt="Elena Vance" class="team-image" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="social-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; gap: 15px; opacity: 0; transition: opacity 0.3s ease;">
+                        <a href="404.html" style="width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)';" onmouseleave="this.style.transform='scale(1)';"><i class="fa-brands fa-linkedin-in" style="font-size: 1.2rem;"></i></a>
+                        <a href="404.html" style="width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)';" onmouseleave="this.style.transform='scale(1)';"><i class="fa-brands fa-x-twitter" style="font-size: 1.2rem;"></i></a>
+                    </div>
+                </div>
+                <div style="padding: 25px; text-align: left;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--dark);">Elena Vance</h3>
+                    <p style="color: var(--primary); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px;">Head of Performance</p>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Scaled 14 separate e-commerce brands to 8-figure run rates.</p>
+                </div>
+            </div>
+            <div class="pricing-card team-card reveal" data-aos-delay="200" style="padding: 0; overflow: hidden; background: var(--light-bg); border: none;">
+                <div class="team-image-container" style="position: relative; overflow: hidden; cursor: pointer;" onmouseenter="this.querySelector('.social-overlay').style.opacity='1';" onmouseleave="this.querySelector('.social-overlay').style.opacity='0';">
+                    <img src="assets/uifaces-popular-avatar (4).webp" alt="Marcus Ren" class="team-image" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="social-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; gap: 15px; opacity: 0; transition: opacity 0.3s ease;">
+                        <a href="404.html" style="width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)';" onmouseleave="this.style.transform='scale(1)';"><i class="fa-brands fa-linkedin-in" style="font-size: 1.2rem;"></i></a>
+                        <a href="404.html" style="width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)';" onmouseleave="this.style.transform='scale(1)';"><i class="fa-brands fa-x-twitter" style="font-size: 1.2rem;"></i></a>
+                    </div>
+                </div>
+                <div style="padding: 25px; text-align: left;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--dark);">Marcus Ren</h3>
+                    <p style="color: var(--primary); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px;">VP, Growth Strategy</p>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Pioneer of Predictive Trend Engineering for B2B pipelines.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Industry Authority -->
+    <section class="section-padding" style="background: var(--light-bg); border-top: 1px solid var(--border);">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 60px">
+          <h4 style="color: var(--primary); margin-bottom: 15px; letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">Resource Hub</h4>
+          <h2 style="margin-bottom: 20px; color: var(--dark);">Stay Ahead of the Algorithm</h2>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card reveal" style="padding: 0; overflow: hidden; background: var(--white); border: 1px solid var(--border); text-align: left;">
+                <img src="assets/ext_445e031d.webp" alt="Blog 1" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 25px;">
+                    <p style="color: var(--primary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px;">WHITEPAPER</p>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--dark);">The 2026 Meta Algorithm Update: What Changed?</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">A deep dive into how Meta's new neural matching system impacts Top-of-Funnel prospecting.</p>
+                    <a href="blog.html" style="color: var(--primary); font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 5px;">Read Report <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></a>
+                </div>
+            </div>
+            <div class="pricing-card reveal" data-aos-delay="100" style="padding: 0; overflow: hidden; background: var(--white); border: 1px solid var(--border); text-align: left;">
+                <img src="assets/results_graph.webp" alt="Podcast Microphone Setup" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 25px;">
+                    <p style="color: var(--primary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px;">PODCAST</p>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--dark);">Scaling TikTok Ads to $10k/Day Profitably</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Listen to our Head of Performance break down the exact creative framework needed for TikTok.</p>
+                    <a href="blog.html" style="color: var(--primary); font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 5px;">Listen Now <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></a>
+                </div>
+            </div>
+            <div class="pricing-card reveal" data-aos-delay="200" style="padding: 0; overflow: hidden; background: var(--white); border: 1px solid var(--border); text-align: left;">
+                <img src="assets/ext_95764e5a.webp" alt="Blog 3" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 25px;">
+                    <p style="color: var(--primary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px;">CASE STUDY</p>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--dark);">Server-Side Tracking: The Antidote to iOS14</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">How implementing CAPI and offline conversions recovered 28% of lost attribution data.</p>
+                    <a href="blog.html" style="color: var(--primary); font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 5px;">Download Case <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i></a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- FAQ Section -->
+    <section class="section-padding" style="background: var(--white); border-top: 1px solid var(--border);">
+      <div class="container">
+        <div class="faq-grid res-grid-2" style="grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: start;">
+          <div class="reveal" data-aos="fade-right" style="position: sticky; top: 100px;">
+            <h4 style="color: var(--primary); margin-bottom: 15px; letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">Knowledge Base</h4>
+            <h2 style="margin-bottom: 20px; color: var(--dark); font-size: 2.8rem; line-height: 1.1;">Common Queries</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem; line-height: 1.6;">Everything you need to know about our methodology, pricing, and algorithmic approach to scale.</p>
+            <a href="404.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px;">Still have questions? <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          
+          <div class="reveal" data-aos="fade-left">
+            <style>
+                .home-faq-item { background: var(--light-bg); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 15px; overflow: hidden; transition: all 0.4s ease; }
+                .home-faq-question { padding: 25px; color: var(--dark); font-size: 1.1rem; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+                .home-faq-icon { font-size: 1.2rem; color: var(--primary); transition: transform 0.4s ease; }
+                .home-faq-answer { max-height: 0; padding: 0 25px; color: var(--text-muted); transition: all 0.4s ease; opacity: 0; font-size: 1rem; line-height: 1.6; }
+                .home-faq-item.active { border-color: var(--primary); box-shadow: 0 10px 30px rgba(222,31,38,0.08); background: var(--white); transform: translateX(-5px); }
+                .home-faq-item.active .home-faq-icon { transform: rotate(45deg); }
+                .home-faq-item.active .home-faq-answer { max-height: 300px; padding-bottom: 25px; opacity: 1; margin-top: -5px; }
+            </style>
+            
+            <div class="home-faq-item">
+                <div class="home-faq-question">Do you require long-term contracts? <i class="fa-solid fa-plus home-faq-icon"></i></div>
+                <div class="home-faq-answer">No. We believe in earning your business every single month. Our algorithmic models are so effective that 94% of our clients stay with us voluntarily for over 2 years.</div>
+            </div>
+            <div class="home-faq-item">
+                <div class="home-faq-question">How is your AI different from standard tools? <i class="fa-solid fa-plus home-faq-icon"></i></div>
+                <div class="home-faq-answer">Standard tools write generic copy. Our proprietary Neural Core ingests thousands of winning ad creatives and trains customized language models specifically for your brand's unique converting emotional triggers.</div>
+            </div>
+            <div class="home-faq-item">
+                <div class="home-faq-question">What ad spend do you require? <i class="fa-solid fa-plus home-faq-icon"></i></div>
+                <div class="home-faq-answer">To properly train our machine learning models and achieve statistical significance, we require a minimum monthly ad spend of $10,000.</div>
+            </div>
+            <div class="home-faq-item">
+                <div class="home-faq-question">How quickly will we see results? <i class="fa-solid fa-plus home-faq-icon"></i></div>
+                <div class="home-faq-answer">While the first 14 days are dedicated to pixel mapping and machine learning calibration, most clients see a significant drop in CPA by week 3, with full exponential scale hitting by month 2.</div>
+            </div>
+            <div class="home-faq-item">
+                <div class="home-faq-question">Do you guarantee ROI? <i class="fa-solid fa-plus home-faq-icon"></i></div>
+                <div class="home-faq-answer">We guarantee the mathematical superiority of our frameworks. While ad platforms constantly shift, our predictive infrastructure ensures you are mathematically positioned to win. We don't guarantee exact numbers, we guarantee the best possible data-driven outcome.</div>
+            </div>
+            
+            <script>
+            document.querySelectorAll('.home-faq-question').forEach(function(q) {
+                q.addEventListener('click', function() {
+                    let parent = this.parentElement;
+                    let isActive = parent.classList.contains('active');
+                    document.querySelectorAll('.home-faq-item').forEach(function(item) {
+                        item.classList.remove('active');
+                    });
+                    if (!isActive) {
+                        parent.classList.add('active');
+                    }
+                });
+            });
+            </script>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+             <a href="index.html" class="logo" style="margin-bottom: 0px; display: block; margin-top: -15px;">
+              <img src="assets/stackly logo RED.webp" style="height: 100px;">
+            </a>
+            <p class="footer-description">
+              Elite-tier performance marketing for brands that demand authority. Powered by algorithms, executed with precision.
+            </p>
+            <div class="footer-socials" style="display: flex; gap: 15px; margin-top: 20px;">
+              <a href="404.html" aria-label="Facebook" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.05); border-radius: 8px; color: var(--white); transition: all 0.3s; text-decoration: none;">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="404.html" aria-label="Twitter" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.05); border-radius: 8px; color: var(--white); transition: all 0.3s; text-decoration: none;">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="404.html" aria-label="LinkedIn" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.05); border-radius: 8px; color: var(--white); transition: all 0.3s; text-decoration: none;">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="404.html" aria-label="Instagram" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.05); border-radius: 8px; color: var(--white); transition: all 0.3s; text-decoration: none;">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 style="margin-top: 0;">Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="service.html">Services</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 style="margin-top: 0;">Agency</h4>
+            <ul>
+              <li><a href="404.html">Our Neural Network</a></li>
+              <li><a href="404.html">Digital Insights</a></li>
+              <li><a href="404.html">Methodology</a></li>
+              <li><a href="404.html">Deploy Team</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 style="margin-top: 0;">Direct Transmission</h4>
+            <div style="display: flex; gap: 10px; align-items: flex-start; margin-bottom: 15px;">
+                <i class="fa-solid fa-location-dot" style="color: var(--primary); margin-top: 4px;"></i>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">HQ: 125 Innovation Way, <br>Silicon Valley, CA</p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <i class="fa-solid fa-phone" style="color: var(--primary);"></i>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">+1 (800) DIGI-PULSE</p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center; margin-top: 15px;">
+                <i class="fa-solid fa-envelope" style="color: var(--primary);"></i>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">strategy@stackly.com</p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center; margin-top: 15px;">
+                <i class="fa-solid fa-clock" style="color: var(--primary);"></i>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Mon-Fri: 09:00 - 18:00 EST</p>
+            </div>
+          </div>
+          </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-grid">
+            <p>&copy; 2026 DigiPulse Performance. All rights reserved.</p>
+            <div class="footer-policy-links">
+              <a href="404.html">Privacy Protocol</a>
+              <a href="404.html">Security Terms</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/script.js?v=2"></script>
+  </body>
+</html>

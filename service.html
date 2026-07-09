@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | AI Growth Marketing Solutions</title>
+    <meta name="description" content="Explore our Omni-Channel growth services." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    
+    <link rel="icon" type="image/webp" href="assets/stackly logo RED.webp">
+        <style>
+        /* Modern Light Theme Services CSS */
+        :root {
+            --bento-bg: var(--white);
+            --bento-border: var(--border);
+            --bento-hover: rgba(222, 31, 38, 0.15);
+        }
+        
+        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .bento-item { background: var(--bento-bg); border: 1px solid var(--bento-border); border-radius: 24px; padding: 40px; overflow: hidden; position: relative; transition: all 0.4s ease; display: flex; flex-direction: column; }
+        .bento-item:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 15px 40px var(--bento-hover); }
+        .bento-span-2 { grid-column: span 2; }
+        @media(max-width: 992px) { .bento-span-2 { grid-column: span 1; } .bento-grid { grid-template-columns: 1fr; } }
+        
+        .bento-title { color: var(--dark); font-size: 1.8rem; margin-bottom: 15px; z-index: 2; position: relative; }
+        .bento-desc { color: var(--text-muted); font-size: 1rem; line-height: 1.6; z-index: 2; position: relative; max-width: 80%; }
+        .bento-img-bg { position: absolute; bottom: 0; right: 0; max-height: 60%; opacity: 0.2; transition: opacity 0.4s; filter: grayscale(1); z-index: 1; border-top-left-radius: 12px; }
+        .bento-item:hover .bento-img-bg { opacity: 0.6; filter: grayscale(0); }
+
+        .pipeline-scroll { display: flex; gap: 30px; overflow-x: auto; padding: 20px 0; scroll-snap-type: x mandatory; }
+        .pipeline-card { flex: 0 0 350px; background: var(--white); border: 1px solid var(--bento-border); border-radius: 20px; padding: 30px; scroll-snap-align: start; }
+        .pipeline-img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 1px solid var(--border); }
+        .pipeline-step { font-family: 'Space Grotesk'; color: var(--primary); font-weight: 800; letter-spacing: 2px; font-size: 0.85rem; margin-bottom: 10px; }
+
+        .matrix-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid var(--bento-border); }
+        .matrix-table th { background: rgba(222, 31, 38, 0.05); color: var(--primary); padding: 20px; text-align: left; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+        .matrix-table td { padding: 20px; color: var(--dark); border-bottom: 1px solid var(--bento-border); font-weight: 500; }
+        .matrix-table tr:hover td { background: var(--light-bg); }
+
+        .signal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 20px; }
+        .signal-card { background: var(--white); border: 1px solid var(--bento-border); border-radius: 16px; padding: 30px; text-align: center; transition: all 0.3s; }
+        .signal-card:hover { border-color: var(--primary); background: var(--light-bg); box-shadow: 0 10px 30px rgba(222, 31, 38, 0.08); }
+        .signal-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+
+        .faq-item { background: var(--white); border: 1px solid var(--bento-border); border-radius: 12px; margin-bottom: 15px; overflow: hidden; transition: all 0.3s; }
+        .faq-question { padding: 25px; color: var(--dark); font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; }
+        .faq-answer { max-height: 0; padding: 0 25px; color: var(--text-muted); transition: all 0.3s; opacity: 0; }
+        .faq-item:hover { border-color: var(--primary); box-shadow: 0 0 20px rgba(222,31,38,0.1); }
+        .faq-item:hover .faq-answer { max-height: 300px; padding-bottom: 25px; opacity: 1; }
+
+        .marquee-container { overflow: hidden; white-space: nowrap; padding: 40px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--light-bg); }
+        .marquee-content { display: inline-block; animation: marquee 25s linear infinite; }
+        .marquee-item { display: inline-block; color: #ccc; font-size: 2rem; font-family: 'Space Grotesk'; font-weight: 800; margin: 0 40px; transition: color 0.3s; }
+        .marquee-item:hover { color: var(--primary); }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+  <body>
+    <!-- Preloader -->
+    <div class="bankio-loader">
+      <div class="bankio-loader-text">INITIALIZING SERVICES</div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="assets/stackly logo RED.webp" alt="Stackly Logo" style="height: 100px; vertical-align: middle;" />
+        </a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html" class="active">Service</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="nav-mobile-only"><a href="login.html">Login</a></li>
+          </ul>
+        </nav>
+        <div class="header-btns">
+          <a href="login.html" class="btn btn-primary">Login</a>
+        </div>
+        <button id="navToggle" class="nav-toggle" >☰</button>
+      </div>
+    </header>
+
+    <!-- 1. Primary Method / Hero Section -->
+    <section class="hero-section" style="position: relative; background: var(--dark); overflow: hidden; min-height: 85vh; display: flex; align-items: center; margin-top:70px;">
+      <img src="assets/hero-2.webp" class="hero-video" alt="Hero Background" style="object-fit:cover; position:absolute; inset:0; width:100%; height:100%; opacity: 0.7;">
+      <div style="position: absolute; inset:0; background: linear-gradient(to top, rgba(17,17,17,0.85) 0%, rgba(17,17,17,0.4) 100%); z-index: 1;"></div>
+      
+      <div class="container text-center" style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
+        <div class="badge-elite" data-aos="fade-down" style="background: rgba(222,31,38,0.1); color: var(--primary); border: 1px solid var(--primary); margin-bottom: 25px;">Our Primary Method</div>
+        <h1 data-aos="fade-up" style="color: var(--white); font-size: 4.5rem; margin-bottom: 25px; line-height: 1.1; letter-spacing: -1px;">
+            We Don't Guess. <br>We <span class="gradient-text">Calculate.</span>
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="100" style="color: rgba(255,255,255,0.7); font-size: 1.25rem; line-height: 1.6; margin-bottom: 45px; max-width: 700px; margin-left: auto; margin-right: auto;">
+            Our methodology eliminates creative intuition. We deploy predictive LLMs and zero-party data intercepts to reverse-engineer your competitors' funnels and acquire customers at mathematical scale.
+        </p>
+        <div data-aos="fade-up" data-aos-delay="200">
+            <a href="404.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 18px 40px; box-shadow: 0 15px 30px rgba(222,31,38,0.3); display: inline-flex; align-items: center; gap: 15px;">
+                Request Algorithmic Proposal <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Service Catalog (The Menu) -->
+    <section class="section-padding" style="background: var(--light-bg);">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px">
+                <h4 style="color: var(--primary); letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">The Catalog</h4>
+                <h2 style="color: var(--dark); font-size: 2.8rem;">Omnichannel Services</h2>
+            </div>
+            
+            <style>
+                .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+                @media (max-width: 1024px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
+                @media (max-width: 600px) { .service-grid { grid-template-columns: 1fr; } }
+                
+                .service-card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 40px 30px; position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: flex; flex-direction: column; }
+                .service-icon { width: 60px; height: 60px; background: rgba(222,31,38,0.05); color: var(--primary); font-size: 1.8rem; display: flex; align-items: center; justify-content: center; border-radius: 14px; margin-bottom: 25px; transition: all 0.4s; }
+                .service-card:hover { border-color: var(--primary); box-shadow: 0 20px 40px rgba(0,0,0,0.06); transform: translateY(-10px); }
+                .service-card:hover .service-icon { background: var(--primary); color: white; transform: scale(1.1); }
+                .service-btn { margin-top: auto; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--primary); opacity: 0; transform: translateY(20px); transition: all 0.4s; }
+                .service-card:hover .service-btn { opacity: 1; transform: translateY(0); }
+            </style>
+
+            <div class="service-grid">
+                <div class="service-card reveal" data-aos="fade-up">
+                    <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h3 style="color: var(--dark); margin-bottom: 15px; font-size: 1.5rem;">Programmatic SEO</h3>
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 25px;">Deploy thousands of optimized, intent-driven landing pages automatically. Dominate search engine real estate and capture long-tail traffic at scale.</p>
+                    <a href="404.html" class="service-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card reveal" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3 style="color: var(--dark); margin-bottom: 15px; font-size: 1.5rem;">Predictive PPC</h3>
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 25px;">Machine-learning algorithms that adjust bids in milliseconds. We buy clicks only when conversion probability exceeds profitability thresholds.</p>
+                    <a href="404.html" class="service-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card reveal" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon"><i class="fa-brands fa-meta"></i></div>
+                    <h3 style="color: var(--dark); margin-bottom: 15px; font-size: 1.5rem;">Paid Social Gen</h3>
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 25px;">AI-generated ad creative spanning Meta, TikTok, and LinkedIn. We test thousands of emotionally-mapped variations weekly to defeat ad fatigue.</p>
+                    <a href="404.html" class="service-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="service-card reveal" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                    <h3 style="color: var(--dark); margin-bottom: 15px; font-size: 1.5rem;">Neural CRM Automations</h3>
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 25px;">Turn traffic into retained revenue. Dynamic email and SMS funnels that adapt their messaging based on the user's specific browsing behavior.</p>
+                    <a href="404.html" class="service-btn">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Our Process (The How) -->
+    <section class="section-padding" style="background: var(--white); border-top: 1px solid var(--border);">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 70px">
+                <h4 style="color: var(--primary); letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">Methodology</h4>
+                <h2 style="color: var(--dark); font-size: 2.8rem;">The Execution Roadmap</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 15px auto 0;">Complete transparency in our deployment protocol. Here is exactly how we ingest your brand and launch scalable campaigns.</p>
+            </div>
+            
+            <style>
+                .roadmap-step { display: flex; gap: 40px; margin-bottom: 60px; position: relative; }
+                .roadmap-number { font-family: 'Space Grotesk'; font-size: 4.5rem; font-weight: 800; color: rgba(222,31,38,0.1); line-height: 0.8; flex-shrink: 0; width: 100px; text-align: right; }
+                .roadmap-content { flex: 1; background: var(--light-bg); border: 1px solid var(--border); border-radius: 20px; padding: 40px; }
+                .roadmap-split { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 25px; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 25px; }
+                .roadmap-col h5 { color: var(--dark); margin-bottom: 10px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; }
+                .roadmap-col p { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
+                @media(max-width: 768px) { .roadmap-step { flex-direction: column; gap: 20px; } .roadmap-number { text-align: left; } .roadmap-split { grid-template-columns: 1fr; } }
+            </style>
+
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="roadmap-step reveal" data-aos="fade-up">
+                    <div class="roadmap-number">01</div>
+                    <div class="roadmap-content">
+                        <h3 style="color: var(--dark); font-size: 1.8rem; margin-bottom: 10px;">Deep System Audit</h3>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; margin: 0;">We reverse-engineer your existing pixel data, identifying CPA leaks and analyzing competitors' funnels.</p>
+                        <div class="roadmap-split">
+                            <div class="roadmap-col">
+                                <h5><i class="fa-solid fa-user" style="color: var(--primary); margin-right: 8px;"></i> What You Do</h5>
+                                <p>Provide Read-Only access to ad accounts, Google Analytics, and CRM platforms.</p>
+                            </div>
+                            <div class="roadmap-col">
+                                <h5><i class="fa-solid fa-robot" style="color: var(--primary); margin-right: 8px;"></i> What We Do</h5>
+                                <p>Extract historical data, map the current LTV decay, and build a 90-day predictive strategy.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roadmap-step reveal" data-aos="fade-up">
+                    <div class="roadmap-number">02</div>
+                    <div class="roadmap-content">
+                        <h3 style="color: var(--dark); font-size: 1.8rem; margin-bottom: 10px;">Algorithmic Strategy</h3>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; margin: 0;">We build the campaign architecture, defining precise tracking parameters and generating the initial AI creative batch.</p>
+                        <div class="roadmap-split">
+                            <div class="roadmap-col">
+                                <h5><i class="fa-solid fa-user" style="color: var(--primary); margin-right: 8px;"></i> What You Do</h5>
+                                <p>Approve the final budget distribution and provide raw UGC/brand assets.</p>
+                            </div>
+                            <div class="roadmap-col">
+                                <h5><i class="fa-solid fa-robot" style="color: var(--primary); margin-right: 8px;"></i> What We Do</h5>
+                                <p>Generate 50+ ad variations, write emotionally intelligent copy, and set up the conversion API.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roadmap-step reveal" data-aos="fade-up">
+                    <div class="roadmap-number">03</div>
+                    <div class="roadmap-content">
+                        <h3 style="color: var(--dark); font-size: 1.8rem; margin-bottom: 10px;">Live Deployment</h3>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; margin: 0;">Campaigns enter the testing matrix. Algorithms begin bidding and rapidly testing hooks to find the optimal CPA.</p>
+                        <div class="roadmap-split">
+                            <div class="roadmap-col">
+                                <h5><i class="fa-solid fa-user" style="color: var(--primary); margin-right: 8px;"></i> What You Do</h5>
+                                <p>Monitor the influx of leads/sales and verify lead quality in your CRM.</p>
+                            </div>
+                            <div class="roadmap-col">
+                                <h5><i class="fa-solid fa-robot" style="color: var(--primary); margin-right: 8px;"></i> What We Do</h5>
+                                <p>Manage intraday budget shifts, rotating out fatigued creatives automatically.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Client Deliverables & Tech Stack -->
+    <section class="section-padding" style="background: var(--dark); color: var(--white); border-top: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden;">
+        <!-- Glowing Accent -->
+        <div style="position: absolute; bottom: -20%; right: -10%; width: 500px; height: 500px; background: var(--primary); filter: blur(150px); opacity: 0.15; border-radius: 50%; pointer-events: none;"></div>
+
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="text-center" style="margin-bottom: 60px">
+                <h4 style="color: var(--primary); letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">Command Center</h4>
+                <h2 style="color: var(--white); font-size: 2.8rem;">Tangible Deliverables</h2>
+            </div>
+            
+            <div class="res-grid-2" style=" gap: 60px; align-items: center; max-width: 1100px; margin: 0 auto 80px;">
+                <div class="reveal" data-aos="fade-right">
+                    <img src="assets/results_graph.webp" alt="Dashboard" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1);">
+                </div>
+                <div class="reveal" data-aos="fade-left">
+                    <h3 style="font-size: 2rem; margin-bottom: 25px;">What You Receive Every Month</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 20px;">
+                        <li style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="width: 35px; height: 35px; border-radius: 8px; background: rgba(222,31,38,0.2); color: var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fa-solid fa-chart-line"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 5px; font-size: 1.1rem;">Live Neural Dashboard</h4>
+                                <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; margin: 0;">24/7 access to a custom Looker Studio dashboard tracking exact ROAS, CPA, and scale velocity.</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="width: 35px; height: 35px; border-radius: 8px; background: rgba(222,31,38,0.2); color: var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fa-solid fa-video"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 5px; font-size: 1.1rem;">Weekly Executive Loom</h4>
+                                <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; margin: 0;">A 5-minute asynchronous video update every Friday detailing what we tested, what won, and next week's trajectory.</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="width: 35px; height: 35px; border-radius: 8px; background: rgba(222,31,38,0.2); color: var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><i class="fa-solid fa-handshake"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 5px; font-size: 1.1rem;">Monthly Strategy Sync</h4>
+                                <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; margin: 0;">A 45-minute live call to review the macro P&L impact and align our bidding algorithms with your inventory levels.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center reveal" data-aos="fade-up">
+                <h5 style="color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; margin-bottom: 30px;">Premium Tech Stack Deployed For You</h5>
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; opacity: 0.6; filter: grayscale(1) brightness(2);">
+                    <div style="font-family: 'Space Grotesk'; font-size: 1.5rem; font-weight: 800;"><i class="fa-brands fa-meta"></i> META</div>
+                    <div style="font-family: 'Space Grotesk'; font-size: 1.5rem; font-weight: 800;"><i class="fa-brands fa-google"></i> GOOGLE</div>
+                    <div style="font-family: 'Space Grotesk'; font-size: 1.5rem; font-weight: 800;"><i class="fa-brands fa-hubspot"></i> HUBSPOT</div>
+                    <div style="font-family: 'Space Grotesk'; font-size: 1.5rem; font-weight: 800;"><i class="fa-solid fa-chart-pie"></i> SEMRUSH</div>
+                    <div style="font-family: 'Space Grotesk'; font-size: 1.5rem; font-weight: 800;"><i class="fa-brands fa-tiktok"></i> TIKTOK</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- 4.5. Project Management & Communication Hub -->
+    <section class="section-padding" style="background: var(--light-bg); border-top: 1px solid var(--border);">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px">
+                <h4 style="color: var(--primary); letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">Trust Builder</h4>
+                <h2 style="color: var(--dark); font-size: 2.8rem; margin-bottom: 15px;">Zero-Ghosting Communication Hub</h2>
+                <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto;">We eliminate the massive agency fear of "ghosting" by plugging you directly into our internal nervous system. Total transparency, zero latency.</p>
+            </div>
+            
+            <div class="res-grid-2" style=" gap: 40px; align-items: stretch; max-width: 1100px; margin: 0 auto;">
+                
+                <!-- Dashboard Visual -->
+                <div class="reveal" data-aos="fade-up" style="background: var(--white); border-radius: 24px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
+                    <div style="background: #f8f9fa; padding: 25px; border-bottom: 1px solid var(--border); text-align: center;">
+                        <img src="assets/ext_cf577c85.webp" alt="Client Portal Dashboard" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                    </div>
+                    <div style="padding: 35px 30px; flex: 1;">
+                        <h3 style="color: var(--dark); font-size: 1.5rem; margin-bottom: 15px;">The Live Portal</h3>
+                        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 25px;">You get a dedicated project portal tracking every split-test, creative iteration, and budget allocation in real-time. No more waiting until the end of the month to see what we're doing.</p>
+                        <div style="display: flex; gap: 10px; color: var(--text-muted); font-size: 0.9rem; font-weight: 600;">
+                            <span style="background: rgba(0,0,0,0.05); padding: 5px 12px; border-radius: 5px;">Asana</span>
+                            <span style="background: rgba(0,0,0,0.05); padding: 5px 12px; border-radius: 5px;">ClickUp</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Communication Cadence -->
+                <div class="reveal" data-aos="fade-up" data-aos-delay="100" style="background: var(--white); border-radius: 24px; border: 1px solid var(--border); padding: 40px 35px; box-shadow: 0 15px 40px rgba(0,0,0,0.05);">
+                    <h3 style="color: var(--dark); font-size: 1.5rem; margin-bottom: 30px;">The Sync Cadence</h3>
+                    
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 25px;">
+                        <li style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(222,31,38,0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.2rem;"><i class="fa-brands fa-slack"></i></div>
+                            <div>
+                                <h4 style="color: var(--dark); margin-bottom: 5px; font-size: 1.1rem;">Real-Time Slack Channel</h4>
+                                <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5;">Direct access to your dedicated media buyers and prompt architects during operating hours.</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(222,31,38,0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.2rem;"><i class="fa-solid fa-video"></i></div>
+                            <div>
+                                <h4 style="color: var(--dark); margin-bottom: 5px; font-size: 1.1rem;">Bi-Weekly Video Reviews</h4>
+                                <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5;">Loom walk-throughs breaking down exact campaign shifts so you never feel out of the loop.</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(222,31,38,0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.2rem;"><i class="fa-solid fa-calendar-check"></i></div>
+                            <div>
+                                <h4 style="color: var(--dark); margin-bottom: 5px; font-size: 1.1rem;">Monthly Strategy Calls</h4>
+                                <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; line-height: 1.5;">Deep dive into macro-level business impact, predictive scaling, and future creative roadmaps.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+   
+
+    
+    <!-- 6. Investment Tiers -->
+    <section class="section-padding" style="background: var(--white); border-top: 1px solid var(--border);">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px">
+                <h4 style="color: var(--primary); letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">Engagement Models</h4>
+                <h2 style="color: var(--dark); font-size: 2.8rem;">Deployment Tiers</h2>
+                <p style="color: var(--text-muted); max-width: 650px; margin: 15px auto 0;">Transparent investment structures designed to align with your monthly algorithmic ad spend velocity.</p>
+            </div>
+            
+            <style>
+                .pricing-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 30px; align-items: center; max-width: 1100px; margin: 0 auto; }
+                .pricing-card-tier { background: var(--light-bg); border: 1px solid var(--border); border-radius: 20px; padding: 40px; text-align: left; transition: all 0.4s ease; position: relative; overflow: hidden; }
+                .pricing-card-tier:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); border-color: rgba(222,31,38,0.3); }
+                .pricing-card-tier.popular { background: var(--dark); color: var(--white); border-color: var(--dark); transform: scale(1.05); z-index: 2; box-shadow: 0 20px 50px rgba(222,31,38,0.15); }
+                .pricing-card-tier.popular:hover { transform: scale(1.05) translateY(-10px); }
+                @media(max-width: 992px) { .pricing-card-tier.popular { transform: scale(1); } .pricing-card-tier.popular:hover { transform: translateY(-10px); } }
+                
+                .tier-badge { position: absolute; top: 0; right: 0; background: var(--primary); color: white; font-weight: 800; font-size: 0.8rem; padding: 10px 20px; border-bottom-left-radius: 20px; letter-spacing: 1px; }
+                .pricing-amount { font-family: 'Space Grotesk'; font-size: 3.5rem; font-weight: 800; margin: 20px 0 10px; line-height: 1; }
+                .pricing-amount span { font-size: 1rem; color: var(--text-muted); font-weight: 500; font-family: 'Inter'; }
+                .popular .pricing-amount span { color: rgba(255,255,255,0.6); }
+                
+                .pricing-list { list-style: none; padding: 0; margin: 30px 0; display: flex; flex-direction: column; gap: 15px; }
+                .pricing-list li { display: flex; gap: 12px; font-size: 0.95rem; align-items: flex-start; }
+                .pricing-list li i { color: var(--primary); margin-top: 4px; font-size: 0.8rem; }
+                .popular .pricing-list li i { color: #10B981; }
+                .popular .pricing-list li { color: rgba(255,255,255,0.8); }
+                .pricing-list li.disabled { opacity: 0.4; text-decoration: line-through; }
+                .pricing-list li.disabled i { color: #ccc; }
+            </style>
+
+            <div class="pricing-container">
+                
+                <!-- Tier 1 -->
+                <div class="pricing-card-tier reveal" data-aos="fade-up">
+                    <h3 style="color: var(--dark); font-size: 1.4rem;">Incubator Node</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">For brands validating initial algorithmic funnels.</p>
+                    <div class="pricing-amount" style="color: var(--dark);">$2,500<span>/mo</span></div>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; font-weight: 600;">Up to $15k Monthly Ad Spend</p>
+                    
+                    <ul class="pricing-list" style="color: var(--text-muted);">
+                        <li><i class="fa-solid fa-check"></i> Dedicated Media Buyer</li>
+                        <li><i class="fa-solid fa-check"></i> Meta & Google Ads Management</li>
+                        <li><i class="fa-solid fa-check"></i> 10 Neural Ad Variations / Mo</li>
+                        <li><i class="fa-solid fa-check"></i> Monthly Strategy Sync</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> Programmatic SEO</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> Dedicated Slack Channel</li>
+                    </ul>
+                    
+                    <a href="404.html" class="btn" style="width: 100%; border: 1px solid var(--border); color: var(--dark); background: transparent; padding: 15px;">Deploy Incubator</a>
+                </div>
+
+                <!-- Tier 2 (Popular) -->
+                <div class="pricing-card-tier popular reveal" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tier-badge">ALGORITHMIC DOMINANCE</div>
+                    <h3 style="color: var(--white); font-size: 1.4rem;">Growth Matrix</h3>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-top: 5px;">Aggressive omni-channel scaling protocol.</p>
+                    <div class="pricing-amount" style="color: var(--white);">$5,800<span>/mo</span></div>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.85rem; font-weight: 600;">Up to $100k Monthly Ad Spend</p>
+                    
+                    <ul class="pricing-list">
+                        <li><i class="fa-solid fa-check"></i> Senior Media Buying Pod</li>
+                        <li><i class="fa-solid fa-check"></i> Meta, Google & TikTok Scale</li>
+                        <li><i class="fa-solid fa-check"></i> 50+ Neural Ad Variations / Mo</li>
+                        <li><i class="fa-solid fa-check"></i> Predictive CRM Automations</li>
+                        <li><i class="fa-solid fa-check"></i> Bi-Weekly Loom Video Reviews</li>
+                        <li><i class="fa-solid fa-check"></i> Direct 24/7 Slack Access</li>
+                    </ul>
+                    
+                    <a href="404.html" class="btn btn-primary" style="width: 100%; padding: 15px; box-shadow: 0 10px 25px rgba(222,31,38,0.4);">Scale Operations</a>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="pricing-card-tier reveal" data-aos="fade-up" data-aos-delay="200">
+                    <h3 style="color: var(--dark); font-size: 1.4rem;">Enterprise Cluster</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 5px;">Custom neural architecture for massive volume.</p>
+                    <div class="pricing-amount" style="color: var(--dark);">Custom</div>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; font-weight: 600;">$100k+ Monthly Ad Spend</p>
+                    
+                    <ul class="pricing-list" style="color: var(--text-muted);">
+                        <li><i class="fa-solid fa-check"></i> Fractional CMO Integration</li>
+                        <li><i class="fa-solid fa-check"></i> Uncapped Infinite Ad Variations</li>
+                        <li><i class="fa-solid fa-check"></i> Custom Zero-Party Data Pipelines</li>
+                        <li><i class="fa-solid fa-check"></i> Full Programmatic SEO Engine</li>
+                        <li><i class="fa-solid fa-check"></i> Daily War Room Protocols</li>
+                        <li><i class="fa-solid fa-check"></i> Advanced Live Looker Dashboards</li>
+                    </ul>
+                    
+                    <a href="404.html" class="btn" style="width: 100%; border: 1px solid var(--border); color: var(--dark); background: transparent; padding: 15px;">Request Audit</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+     <!-- 5. Social Proof & Case Studies -->
+    <section class="section-padding" style="background: var(--light-bg);">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 60px">
+                <h4 style="color: var(--primary); letter-spacing: 2px; font-weight: 700; text-transform: uppercase;">The Evidence</h4>
+                <h2 style="color: var(--dark); font-size: 2.8rem;">Algorithmic Proof</h2>
+            </div>
+            
+            <div class="res-grid-2" style=" gap: 30px; margin-bottom: 60px;">
+                <div class="reveal" data-aos="fade-up" style="background: var(--white); border-radius: 20px; border: 1px solid var(--border); padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; right: 0; padding: 15px; background: rgba(222,31,38,0.1); color: var(--primary); font-weight: 800; border-bottom-left-radius: 20px;">E-Commerce</div>
+                    <h2 style="font-size: 3.5rem; color: var(--dark); margin-bottom: 5px; line-height: 1;">+240%</h2>
+                    <h4 style="color: var(--primary); margin-bottom: 25px;">ROAS Increase in 90 Days</h4>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; font-style: italic; margin-bottom: 25px; line-height: 1.7;">"DigiPulse's neural testing isolated a winning creative angle we never considered. They scaled our budget from $15k to $80k a month profitably."</p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="assets/ext_8a8326d7.webp" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <h5 style="margin: 0; color: var(--dark);">James T.</h5>
+                            <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">CMO, Vertex Apparel</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal" data-aos="fade-up" data-aos-delay="100" style="background: var(--white); border-radius: 20px; border: 1px solid var(--border); padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; right: 0; padding: 15px; background: rgba(222,31,38,0.1); color: var(--primary); font-weight: 800; border-bottom-left-radius: 20px;">B2B SaaS</div>
+                    <h2 style="font-size: 3.5rem; color: var(--dark); margin-bottom: 5px; line-height: 1;">-45%</h2>
+                    <h4 style="color: var(--primary); margin-bottom: 25px;">Drop in Cost-Per-Acquisition</h4>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; font-style: italic; margin-bottom: 25px; line-height: 1.7;">"Their programmatic SEO and aggressive omni-channel retargeting flooded our pipeline with enterprise demos. Unbelievable execution."</p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="assets/ext_b66156c8.webp" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <h5 style="margin: 0; color: var(--dark);">Sarah V.</h5>
+                            <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">VP of Marketing, CloudSync</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="text-center reveal" data-aos="fade-up">
+                <div style="display: inline-flex; align-items: center; gap: 30px; padding: 20px 40px; background: var(--white); border-radius: 100px; border: 1px solid var(--border); box-shadow: 0 10px 20px rgba(0,0,0,0.02);">
+                    <div style="font-weight: 800; color: var(--dark); display: flex; align-items: center; gap: 10px;"><i class="fa-brands fa-google" style="color: #4285F4;"></i> Premier Partner</div>
+                    <div style="width: 1px; height: 20px; background: var(--border);"></div>
+                    <div style="font-weight: 800; color: var(--dark); display: flex; align-items: center; gap: 10px;"><i class="fa-brands fa-meta" style="color: #0668E1;"></i> Business Partner</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+             <a href="index.html" class="logo" style="margin-bottom: 0px; display: block; margin-top: -15px;">
+              <img src="assets/stackly logo RED.webp" style="height: 100px;">
+            </a>
+            <p class="footer-description">
+              Elite-tier performance marketing for brands that demand authority. Powered by algorithms, executed with precision.
+            </p>
+            <div class="footer-socials" style="display: flex; gap: 15px; margin-top: 20px;">
+              <a href="404.html" aria-label="Facebook" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.05); border-radius: 8px; color: var(--white); transition: all 0.3s; text-decoration: none;">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="404.html" aria-label="Twitter" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.05); border-radius: 8px; color: var(--white); transition: all 0.3s; text-decoration: none;">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="404.html" aria-label="LinkedIn" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.05); border-radius: 8px; color: var(--white); transition: all 0.3s; text-decoration: none;">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="404.html" aria-label="Instagram" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.05); border-radius: 8px; color: var(--white); transition: all 0.3s; text-decoration: none;">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 style="margin-top: 0;">Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="service.html">Services</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 style="margin-top: 0;">Agency</h4>
+            <ul>
+              <li><a href="404.html">Our Neural Network</a></li>
+              <li><a href="404.html">Digital Insights</a></li>
+              <li><a href="404.html">Methodology</a></li>
+              <li><a href="404.html">Deploy Team</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 style="margin-top: 0;">Direct Transmission</h4>
+            <div style="display: flex; gap: 10px; align-items: flex-start; margin-bottom: 15px;">
+                <i class="fa-solid fa-location-dot" style="color: var(--primary); margin-top: 4px;"></i>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">HQ: 125 Innovation Way, <br>Silicon Valley, CA</p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <i class="fa-solid fa-phone" style="color: var(--primary);"></i>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">+1 (800) DIGI-PULSE</p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center; margin-top: 15px;">
+                <i class="fa-solid fa-envelope" style="color: var(--primary);"></i>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">strategy@stackly.com</p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center; margin-top: 15px;">
+                <i class="fa-solid fa-clock" style="color: var(--primary);"></i>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Mon-Fri: 09:00 - 18:00 EST</p>
+            </div>
+          </div>
+          </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-grid">
+            <p>&copy; 2026 DigiPulse Performance. All rights reserved.</p>
+            <div class="footer-policy-links">
+              <a href="404.html">Privacy Protocol</a>
+              <a href="404.html">Security Terms</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
+
+
+
+
+

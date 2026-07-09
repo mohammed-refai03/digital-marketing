@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | AI Marketing Insights</title>
+    <meta name="description" content="Read our latest algorithms and digital marketing strategies." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <style>
+      /* New Blog Layout CSS */
+      .blog-layout { display: grid; grid-template-columns: 1fr 350px; gap: 40px; margin-top: 50px; align-items: start; }
+      .masonry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 30px; }
+      
+      .featured-article { position: relative; border-radius: 20px; overflow: hidden; margin-top: 40px; margin-bottom: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+      .featured-img { width: 100%; height: 500px; object-fit: cover; transition: transform 0.7s ease; }
+      .featured-article:hover .featured-img { transform: scale(1.05); }
+      .featured-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.1)); display: flex; flex-direction: column; justify-content: flex-end; padding: 50px; }
+      .featured-badge { background: var(--primary); color: white; padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 800; display: inline-block; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase; align-self: flex-start; }
+      
+      .blog-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); display: flex; flex-direction: column; }
+      .blog-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(222, 31, 38, 0.15); border-color: rgba(222, 31, 38, 0.4); }
+      .blog-img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease; filter: grayscale(20%); }
+      .blog-card:hover .blog-img { transform: scale(1.1); filter: grayscale(0%); }
+      .blog-content { padding: 30px; display: flex; flex-direction: column; flex: 1; }
+      .blog-date { font-size: 0.85rem; color: var(--primary); font-weight: 700; margin-bottom: 12px; display: inline-block; letter-spacing: 1px; text-transform: uppercase; }
+      .blog-title { font-size: 1.3rem; margin-bottom: 15px; line-height: 1.4; color: var(--dark); font-weight: 700; transition: color 0.3s; }
+      .blog-card:hover .blog-title { color: var(--primary); }
+      .blog-excerpt { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px; flex: 1; line-height: 1.6; }
+      .blog-read-btn { display: inline-block; padding: 8px 18px; border: 2px solid var(--primary); border-radius: 8px; color: var(--primary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; align-self: flex-start; margin-top: auto; text-decoration: none; }
+      .blog-read-btn:hover { background: var(--primary); color: #fff; }
+      
+      .blog-sidebar { background: var(--white); border-radius: 16px; padding: 30px; border: 1px solid var(--border); position: sticky; top: 100px; z-index: 10; }
+      .sidebar-title { font-size: 1.2rem; color: var(--dark); margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+      .tag-cloud { display: flex; flex-wrap: wrap; gap: 10px; }
+      .tag { padding: 8px 16px; background: var(--light-bg); border-radius: 20px; color: var(--text-muted); font-size: 0.85rem; transition: all 0.3s; border: 1px solid transparent; text-decoration: none; }
+      .tag:hover { background: rgba(222, 31, 38, 0.1); color: var(--primary); border-color: var(--primary); }
+      
+      .newsletter-widget { margin-top: 40px; background: var(--light-bg); padding: 25px; border-radius: 12px; border: 1px solid var(--border); text-align: center; box-shadow: var(--shadow-sm); }
+      .newsletter-widget h4 { color: var(--dark); margin-bottom: 10px; }
+      .newsletter-widget p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+      .newsletter-widget input { width: 100%; padding: 12px 15px; border-radius: 8px; border: 1px solid var(--border); background: var(--white); color: var(--dark); margin-bottom: 15px; outline: none; box-sizing: border-box; }
+      .newsletter-widget input:focus { border-color: var(--primary); }
+      .newsletter-widget button { width: 100%; }
+
+      @media (max-width: 992px) {
+          .blog-layout { grid-template-columns: 1fr; }
+          .blog-sidebar { position: static; margin-top: 40px; }
+          .featured-img { height: 350px; }
+          .featured-overlay { padding: 30px; }
+      }
+    </style>
+      <link rel="icon" type="image/webp" href="assets/stackly logo RED.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+  <body>
+    <!-- Preloader -->
+    <div class="bankio-loader">
+      <div class="bankio-loader-text">FETCHING DATA</div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="assets/stackly logo RED.webp" alt="Stackly Logo" style="height: 100px; vertical-align: middle;" />
+        </a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="nav-mobile-only"><a href="login.html">Login</a></li>
+          </ul>
+        </nav>
+        <div class="header-btns">
+          <a href="login.html" class="btn btn-primary">Login</a>
+        </div>
+        <button id="navToggle" class="nav-toggle" >☰</button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    
+    <!-- 1. Unified Hero Section -->
+    <section class="hero-section" style="position: relative; background: var(--dark); overflow: hidden; min-height: 85vh; display: flex; align-items: center;">
+      <img src="assets/hero-3.webp" class="hero-video" alt="Hero Background" style="object-fit:cover; position:absolute; inset:0; width:100%; height:100%; opacity: 0.7;">
+      <div style="position: absolute; inset:0; background: linear-gradient(to top, rgba(17,17,17,0.85) 0%, rgba(17,17,17,0.4) 100%); z-index: 1;"></div>
+      
+      <div class="container text-center" style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
+        <div class="badge-elite" data-aos="fade-down" style="background: rgba(222,31,38,0.1); color: var(--primary); border: 1px solid var(--primary); margin-bottom: 25px;">The Algorithm Intel</div>
+        <h1 data-aos="fade-up" style="color: var(--white); font-size: 4.5rem; margin-bottom: 25px; line-height: 1.1; letter-spacing: -1px;">
+            Industry <span class="gradient-text">Data.</span>
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="100" style="color: rgba(255,255,255,0.7); font-size: 1.25rem; line-height: 1.6; margin-bottom: 0px; max-width: 700px; margin-left: auto; margin-right: auto;">
+            Explore our deep dives into neural matching updates, predictive scaling frameworks, and the machine-learning models powering modern customer acquisition.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- Main Content -->
+    <section class="section-padding" style="background: var(--light-bg); padding-top: 0;">
+        <div class="container">
+            
+            <!-- Featured Article -->
+            <article class="featured-article reveal" data-aos="fade-up">
+                <img src="assets/hero-5.webp" alt="Featured Article" class="featured-img" style="filter: hue-rotate(20deg);">
+                <div class="featured-overlay">
+                    <span class="featured-badge">Exclusive Report</span>
+                    <h2 style="color: white; font-size: 2.5rem; margin-bottom: 15px; line-height: 1.2;">The Genesis of AI Personalization: Moving Beyond Basic Segmentation</h2>
+                    <p style="color: #ddd; font-size: 1.1rem; max-width: 800px; margin-bottom: 25px; line-height: 1.6;">Discover how next-generation neural networks are constructing hyper-personalized user journeys in real-time, eliminating the need for traditional audience buckets entirely.</p>
+                    <a href="404.html" class="blog-read-btn">Read Intelligence</a>
+                </div>
+            </article>
+
+            <!-- Blog Layout (Grid + Sidebar) -->
+            <div class="blog-layout">
+                <!-- Left Column: Articles -->
+                <div class="masonry-grid">
+                    <article class="blog-card reveal" data-aos="fade-up">
+                        <img src="assets/about_agency.webp" alt="Deep Learning" class="blog-img">
+                        <div class="blog-content">
+                            <span class="blog-date">May 12, 2026</span>
+                            <h3 class="blog-title">Deep Learning in Customer Retention Strategies</h3>
+                            <p class="blog-excerpt">Stop guessing why users churn. We integrated LSTMs to predict drop-offs with 94% accuracy three weeks before they happen.</p>
+                            <a href="404.html" class="blog-read-btn">Read Intelligence</a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card reveal" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/ext_445e031d.webp" alt="Behavioral Analytics" class="blog-img">
+                        <div class="blog-content">
+                            <span class="blog-date">April 28, 2026</span>
+                            <h3 class="blog-title">Beyond the Click: Next-Gen Behavioral Analytics</h3>
+                            <p class="blog-excerpt">Clicks are a vanity metric in 2026. Explore how micro-interaction mapping determines true intent.</p>
+                            <a href="404.html" class="blog-read-btn">Read Intelligence</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card reveal" data-aos="fade-up">
+                        <img src="assets/growth_chart.webp" alt="A/B Testing" class="blog-img">
+                        <div class="blog-content">
+                            <span class="blog-date">April 15, 2026</span>
+                            <h3 class="blog-title">Automating A/B Testing with Neural Networks</h3>
+                            <p class="blog-excerpt">Manual split testing is dead. Learn how autonomous agents spin up 10,000 variations and dynamically scale winning variants.</p>
+                            <a href="404.html" class="blog-read-btn">Read Intelligence</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card reveal" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/ext_b807bc74.webp" alt="Zero-Party Protocol" class="blog-img">
+                        <div class="blog-content">
+                            <span class="blog-date">March 02, 2026</span>
+                            <h3 class="blog-title">Zero-Party Protocol: The Future of Cookieless Attribution</h3>
+                            <p class="blog-excerpt">A technical deep-dive into establishing raw server-to-server connection arrays that bypass mobile privacy firewalls.</p>
+                            <a href="404.html" class="blog-read-btn">Read Intelligence</a>
+                        </div>
+                    </article>
+                
+                    <article class="blog-card reveal" data-aos="fade-up">
+                        <img src="assets/social_campaign.webp" alt="Marketing Metrics" class="blog-img">
+                        <div class="blog-content">
+                            <span class="blog-date">February 18, 2026</span>
+                            <h3 class="blog-title">The Fall of ROAS: Why MER is Your Only True Metric</h3>
+                            <p class="blog-excerpt">In-platform ROAS is notoriously over-reported. Learn how Marketing Efficiency Ratio paints the actual picture of profitability.</p>
+                            <a href="404.html" class="blog-read-btn">Read Intelligence</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card reveal" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/ext_8293802d.webp" alt="Generative AI Creative" class="blog-img">
+                        <div class="blog-content">
+                            <span class="blog-date">February 05, 2026</span>
+                            <h3 class="blog-title">Generative AI in High-Volume Creative Testing</h3>
+                            <p class="blog-excerpt">Testing 1,000 ad variants manually is impossible. See how generative diffusion models are bridging the gap for direct-response marketing.</p>
+                            <a href="404.html" class="blog-read-btn">Read Intelligence</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Right Column: Sidebar -->
+                <aside class="blog-sidebar reveal" data-aos="fade-left">
+                    <h3 class="sidebar-title">Trending Topics</h3>
+                    <div class="tag-cloud">
+                        <a href="404.html" class="tag">#AI_COPYWRITING</a>
+                        <a href="404.html" class="tag">#NEURAL_ROAS</a>
+                        <a href="404.html" class="tag">#ALGORITHMS</a>
+                        <a href="404.html" class="tag">#SERVER_TRACKING</a>
+                        <a href="404.html" class="tag">#GROWTH</a>
+                        <a href="404.html" class="tag">#ZERO_PARTY_DATA</a>
+                    </div>
+
+                    <div class="newsletter-widget">
+                        <h4>Intelligence Digest</h4>
+                        <p>Get raw data strategies in your inbox weekly.</p>
+                        <form action="404.html" method="get">
+                            <input type="email" placeholder="Corporate Email" required>
+                            <button type="submit" class="btn btn-primary" onclick="window.location.href='404.html'">Subscribe</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+             <a href="index.html" class="logo" style="margin-bottom: 0px; display: block; margin-top: -15px;">
+              <img src="assets/stackly logo RED.webp" style="height: 100px;">
+            </a>
+            <p class="footer-description">
+              Elite-tier performance marketing for brands that demand authority. Powered by algorithms, executed with precision.
+            </p>
+            <div class="footer-socials" style="display: flex; gap: 15px; margin-top: 20px;">
+              <a href="404.html" aria-label="Facebook" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.05); border-radius: 8px; color: var(--white); transition: all 0.3s; text-decoration: none;">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="404.html" aria-label="Twitter" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.05); border-radius: 8px; color: var(--white); transition: all 0.3s; text-decoration: none;">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="404.html" aria-label="LinkedIn" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.05); border-radius: 8px; color: var(--white); transition: all 0.3s; text-decoration: none;">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="404.html" aria-label="Instagram" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.05); border-radius: 8px; color: var(--white); transition: all 0.3s; text-decoration: none;">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 style="margin-top: 0;">Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="service.html">Services</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 style="margin-top: 0;">Agency</h4>
+            <ul>
+              <li><a href="404.html">Our Neural Network</a></li>
+              <li><a href="404.html">Digital Insights</a></li>
+              <li><a href="404.html">Methodology</a></li>
+              <li><a href="404.html">Deploy Team</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 style="margin-top: 0;">Direct Transmission</h4>
+            <div style="display: flex; gap: 10px; align-items: flex-start; margin-bottom: 15px;">
+                <i class="fa-solid fa-location-dot" style="color: var(--primary); margin-top: 4px;"></i>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">HQ: 125 Innovation Way, <br>Silicon Valley, CA</p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <i class="fa-solid fa-phone" style="color: var(--primary);"></i>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">+1 (800) DIGI-PULSE</p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center; margin-top: 15px;">
+                <i class="fa-solid fa-envelope" style="color: var(--primary);"></i>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">strategy@stackly.com</p>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center; margin-top: 15px;">
+                <i class="fa-solid fa-clock" style="color: var(--primary);"></i>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Mon-Fri: 09:00 - 18:00 EST</p>
+            </div>
+          </div>
+          </div>
+        <div class="footer-bottom">
+          <div class="footer-bottom-grid">
+            <p>&copy; 2026 DigiPulse Performance. All rights reserved.</p>
+            <div class="footer-policy-links">
+              <a href="404.html">Privacy Protocol</a>
+              <a href="404.html">Security Terms</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
+
+
+
+
+

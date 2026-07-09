@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Portal | DigiPulse Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Dashboard-specific tweaks */
+        .metric-table th, .metric-table td { padding: 12px 10px; font-size: 0.85rem;}
+        
+        /* Forced Visibility for Dashboard Content */
+        /* Eliminates any 'blank void' issues by bypassing animation blockers */
+        .content-section { opacity: 1 !important; visibility: visible !important; display: none; min-height: 80vh; }
+        .content-section.active-visible { display: block !important; }
+        .stat-card, .alert-card, .dashboard-grid { opacity: 1 !important; visibility: visible !important; transform: none !important; }
+
+        /* Dashboard Scale adjustments for breakpoints */
+        @media (max-width: 1024px) {
+            .stat-card h2 { font-size: 1.8rem; }
+        }
+        @media (max-width: 425px) {
+            .stat-card h3 { font-size: 1.2rem !important; }
+            .dashboard-header-sticky { padding: 15px 10px; margin-bottom: 20px;}
+        }
+    </style>
+    <link rel="icon" type="image/webp" href="assets/stackly logo RED.webp">
+</head>
+<body style="background: #f4f7f6;">
+    
+
+    <aside class="sidebar" id="sidebar">
+        <a href="index.html" class="sidebar-logo">
+            <img src="assets/stackly logo RED.webp" alt="Stackly Logo">
+        </a>
+        <ul class="sidebar-menu">
+            <li><a href="#" class="active" data-section="dashboard"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg> <span>Brand Console</span></a></li>
+            <li><a href="#" data-section="creatives"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg> <span>Ad Creatives</span></a></li>
+            <li><a href="#" data-section="leads"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg> <span>Lead Velocity</span></a></li>
+            <li><a href="#" data-section="billing"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg> <span>Campaign Budget</span></a></li>
+            <li><a href="#" data-section="settings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg> <span>Tracking Pixels</span></a></li>
+        </ul>
+        <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border);">
+            <div class="user-profile-widget" style="margin-bottom: 15px;">
+                <div class="avatar user-dynamic-avatar" style="flex-shrink: 0;">U</div>
+                <div class="info left-align" style="overflow: hidden;">
+                    <div class="role user-dynamic-role">Growth Partner (Client)</div>
+                    <div class="email user-dynamic-email" style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; max-width: 150px;">commander@digipulse.ai</div>
+                </div>
+            </div>
+            <a href="index.html" class="logout-link" style="color: #ef4444; padding: 10px 0;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg> <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="dashboard-header-sticky">
+            <div class="dashboard-header-content" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <div style="display: flex; align-items: center;">
+                    <button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.add('active'); document.body.classList.add('sidebar-open');">☰</button>
+                    <div class="console-title" style="color: #0f172a; font-size: 1.25rem; font-weight: 700; text-transform: none; margin: 0;">Dashboard Overview</div>
+                </div>
+                <div class="user-block" style="display: flex; align-items: center; gap: 15px;">
+                    <div class="user-profile-widget hide-mobile" style="display: flex; align-items: center; gap: 12px; text-align: right;">
+                        <div class="info">
+                            <div class="role user-dynamic-role" style="font-weight: 700; font-size: 0.85rem; color: #0f172a;">Growth Partner (Client)</div>
+                            <div class="email user-dynamic-email" style="font-size: 0.75rem; color: #64748b;">commander@digipulse.ai</div>
+                        </div>
+                        <div class="avatar user-dynamic-avatar" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #0d9488; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #0d9488; background: #e6f6f4;">U</div>
+                    </div>
+                    <div class="nav-avatar user-dynamic-avatar show-mobile-avatar" style="width: 45px; height: 45px; border-radius: 50%; border: 2px solid #0d9488; align-items: center; justify-content: center; font-weight: 700; color: #0f172a; background: #e6f6f4; font-size: 1.2rem; cursor: pointer;">U</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Overview Section (Brand Console) -->
+        <div id="dashboard-section" class="content-section dashboard-content-wrapper active-visible">
+            <h2 style="color: #0f172a; font-family: 'Space Grotesk'; margin-bottom: 20px;">Overview Dashboard</h2>
+            <div class="stats-grid stats-grid-4">
+                <div class="kpi-card">
+                    <div class="kpi-title">Monthly Ad Spend</div>
+                    <div class="kpi-value">$42,850</div>
+                    <div class="kpi-trend positive">↑ 12.5% vs last month</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-title">Average CPA</div>
+                    <div class="kpi-value">$18.25</div>
+                    <div class="kpi-trend positive">↓ 4.2% vs last month</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-title">Blended ROAS</div>
+                    <div class="kpi-value">3.4x</div>
+                    <div class="kpi-trend positive">↑ 0.2x vs last month</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-title">Active Leads Pipeline</div>
+                    <div class="kpi-value">1,240</div>
+                    <div class="kpi-trend negative">↓ 1.1% vs last month</div>
+                </div>
+            </div>
+            <div class="dashboard-grid dash-split-2-1">
+                <div class="chart-container">
+                    <h3 style="color: #0f172a; font-size: 1.1rem; margin-bottom: 20px;">Revenue Generation (Conversion Tracking)</h3>
+                    <div style="position: relative; height: 280px; width: 100%;">
+                        <canvas id="revenueChart" ></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3 style="color: #0f172a; font-size: 1.1rem; margin-bottom: 20px;">Traffic Distribution</h3>
+                    <div style="position: relative; height: 280px; width: 100%;">
+                        <canvas id="trafficChart" ></canvas>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="data-table-container">
+                <div style="padding: 20px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="color: #0f172a; font-size: 1.1rem; margin: 0;">Recent Campaigns</h3>
+                    <button onclick="window.location.href='404.html'" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;" >View All</button>
+                </div>
+                <table class="data-table">
+                    <thead><tr><th>Campaign Name</th><th>Platform</th><th>Spend</th><th>Status</th><th>CPA</th></tr></thead>
+                    <tbody>
+                        <tr><td style="font-weight: 600; color: #0f172a;">Q3 Retargeting</td><td><i class="fa-brands fa-meta" style="color: #0668E1;"></i> Meta Ads</td><td>$4,200.50</td><td><span class="status-badge success">Active</span></td><td style="font-weight: 600;">$14.20</td></tr>
+                        <tr><td style="font-weight: 600; color: #0f172a;">UGC Hook Testing</td><td><i class="fa-brands fa-tiktok" style="color: #000;"></i> TikTok</td><td>$1,850.00</td><td><span class="status-badge warning">Learning</span></td><td style="font-weight: 600;">$22.10</td></tr>
+                        <tr><td style="font-weight: 600; color: #0f172a;">Brand Search</td><td><i class="fa-brands fa-google" style="color: #4285F4;"></i> Google Ads</td><td>$8,400.00</td><td><span class="status-badge success">Active</span></td><td style="font-weight: 600;">$5.80</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="dashboard-grid dash-split-2-1">
+                <div class="data-table-container" style="margin-top: 25px;">
+                    <div style="padding: 15px 20px; border-bottom: 1px solid #e2e8f0;"><h3 style="color: #0f172a; font-size: 1.05rem; margin: 0;"><i class="fa-solid fa-credit-card" style="color: #8b5cf6; margin-right: 8px;"></i> Recent Transactions (Live)</h3></div>
+                    <table class="data-table">
+                        <tbody>
+                            <tr><td><i class="fa-brands fa-cc-visa" style="font-size: 1.5rem; color: #1a1f71; vertical-align: middle; margin-right: 10px;"></i> Visa ending in 4242</td><td>Auto-Refill</td><td style="color: #64748b; font-size: 0.8rem;">Today, 09:41 AM</td><td style="text-align: right; font-weight: 700;">$5,000.00</td></tr>
+                            <tr><td><i class="fa-brands fa-cc-mastercard" style="font-size: 1.5rem; color: #eb001b; vertical-align: middle; margin-right: 10px;"></i> Master ending in 8812</td><td>Manual Payment</td><td style="color: #64748b; font-size: 0.8rem;">Yesterday, 14:22 PM</td><td style="text-align: right; font-weight: 700;">$2,500.00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="kpi-card" style="margin-top: 25px;">
+                    <h3 style="color: #0f172a; font-size: 1.05rem; margin-bottom: 15px;"><i class="fa-solid fa-shield-halved" style="color: #10b981; margin-right: 8px;"></i> Billing Security</h3>
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <i class="fa-solid fa-lock" style="font-size: 1.5rem; color: #cbd5e1;"></i>
+                        <div><strong style="display: block; font-size: 0.9rem; color: #0f172a;">256-bit Encryption</strong><span style="font-size: 0.75rem; color: #64748b;">Active</span></div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <i class="fa-solid fa-fingerprint" style="font-size: 1.5rem; color: #cbd5e1;"></i>
+                        <div><strong style="display: block; font-size: 0.9rem; color: #0f172a;">2FA Authentication</strong><span style="font-size: 0.75rem; color: #10b981; font-weight: 600;">Enabled</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ad Creatives Section -->
+        <div id="creatives-section" class="content-section dashboard-content-wrapper">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 style="color: #0f172a; font-family: 'Space Grotesk';">Ad Creatives Manager</h2>
+                <button onclick="window.location.href='404.html'" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;" >+ Request New Creative</button>
+            </div>
+            <div class="stats-grid stats-grid-3" style="margin-bottom: 25px;">
+                <div class="kpi-card" style="position: relative;">
+                    <div style="position: absolute; top: 20px; right: 20px; font-size: 1.5rem; color: #94a3b8;"><i class="fa-solid fa-magnet"></i></div>
+                    <div class="kpi-title">Average Hook Rate</div><div class="kpi-value">28.4%</div><div class="kpi-trend positive">↑ 2.1%</div>
+                </div>
+                <div class="kpi-card" style="position: relative;">
+                    <div style="position: absolute; top: 20px; right: 20px; font-size: 1.5rem; color: #94a3b8;"><i class="fa-solid fa-photo-film"></i></div>
+                    <div class="kpi-title">Active Assets</div><div class="kpi-value">142</div><div class="kpi-trend neutral">Stable</div>
+                </div>
+                <div class="kpi-card" style="position: relative;">
+                    <div style="position: absolute; top: 20px; right: 20px; font-size: 1.5rem; color: #94a3b8;"><i class="fa-solid fa-battery-quarter"></i></div>
+                    <div class="kpi-title">Fatigued Assets</div><div class="kpi-value">12</div><div class="kpi-trend negative">Require Rotation</div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <h3 style="color: #0f172a; font-size: 1.1rem; margin-bottom: 20px;">Creative Performance Trends (CTR %)</h3>
+                <div style="position: relative; width: 100%; min-height: 250px;"><div style="position: relative; height: 280px; width: 100%;">
+                        <canvas id="creativesScatterChart"></canvas>
+                    </div></div>
+            </div>
+            <div class="dashboard-grid scroll-grid" style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));">
+                <div class="kpi-card" style="padding: 15px;">
+                    <img src="assets/social_campaign.webp" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" alt="UGC Creative">
+                    <h4 style="font-size: 1rem; color: #0f172a; margin-bottom: 5px;">UGC Variation A - Meta</h4>
+                    <p style="font-size: 0.8rem; color: #16a34a; font-weight: 700; margin-bottom: 10px;">CTR: 4.2% | Hook Rate: 34%</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="status-badge success">Scaling</span><a href="404.html" style="color: #0ea5e9; font-size: 0.85rem; font-weight: 600;">View Asset</a>
+                    </div>
+                </div>
+                <div class="kpi-card" style="padding: 15px;">
+                    <img src="assets/hero_bg.webp" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;" alt="Graphic Creative">
+                    <h4 style="font-size: 1rem; color: #0f172a; margin-bottom: 5px;">Graphic Hook - TikTok</h4>
+                    <p style="font-size: 0.8rem; color: #dc2626; font-weight: 700; margin-bottom: 10px;">CTR: 1.1% | Hook Rate: 12%</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="status-badge danger">Fatigued</span><a href="404.html" style="color: #0ea5e9; font-size: 0.85rem; font-weight: 600;">View Asset</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leads Section -->
+        <div id="leads-section" class="content-section dashboard-content-wrapper">
+            <h2 style="color: #0f172a; font-family: 'Space Grotesk'; margin-bottom: 20px;">Lead Velocity & Pipeline Health</h2>
+            <div class="dashboard-grid dash-auto-fit">
+                <div class="chart-container">
+                    <h3 style="color: #0f172a; font-size: 1.1rem; margin-bottom: 20px;">Real-Time Pipeline Intake</h3>
+                    <div style="position: relative; height: 280px; width: 100%;">
+                        <canvas id="leadsChart" ></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3 style="color: #0f172a; font-size: 1.1rem; margin-bottom: 20px;">Intent Distribution</h3>
+                    <div style="position: relative; height: 280px; width: 100%;">
+                        <canvas id="leadsPieChart" ></canvas>
+                    </div>
+                </div>
+                <div class="chart-container" style="overflow: hidden;">
+                    <h3 style="color: #0f172a; font-size: 1.1rem; margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">Live Ingest Stream <span style="display: inline-block; width: 8px; height: 8px; background: #dc2626; border-radius: 50%; box-shadow: 0 0 0 rgba(220, 38, 38, 0.4); animation: pulse 2s infinite;"></span></h3>
+                    <div style="display: flex; flex-direction: column; gap: 15px; max-height: 250px; overflow-y: auto; padding-right: 10px;">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; animation: slideDown 0.5s ease-out;">
+                            <div><strong style="color: #0f172a;">John Doe</strong><br><span style="color: #64748b;">Enterprise Demo</span></div>
+                            <div style="text-align: right;"><span class="status-badge success">High Intent</span><br><span style="color: #64748b;">2m ago</span></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">
+                            <div><strong style="color: #0f172a;">Sarah Smith</strong><br><span style="color: #64748b;">Newsletter Signup</span></div>
+                            <div style="text-align: right;"><span class="status-badge neutral">Low Intent</span><br><span style="color: #64748b;">15m ago</span></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">
+                            <div><strong style="color: #0f172a;">Acme Corp</strong><br><span style="color: #64748b;">Quote Request</span></div>
+                            <div style="text-align: right;"><span class="status-badge warning">Med Intent</span><br><span style="color: #64748b;">1h ago</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); } 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); } }
+                @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+            </style>
+        </div>
+
+        <!-- Billing Section -->
+        <div id="billing-section" class="content-section dashboard-content-wrapper">
+            <h2 style="color: #0f172a; font-family: 'Space Grotesk'; margin-bottom: 20px;">Campaign Budget & Billing</h2>
+            <div class="stats-grid stats-grid-3">
+                <div class="kpi-card">
+                    <div class="kpi-title">Current Balance</div>
+                    <div class="kpi-value">$5,240.00</div>
+                    <button onclick="window.location.href='404.html'" class="btn btn-primary" style="padding: 5px 12px; font-size: 0.8rem;" >Add Funds</button>
+                </div>
+                <div class="chart-container" style="grid-column: span 2; margin-bottom: 0;">
+                    <h3 style="color: #0f172a; font-size: 1.1rem; margin-bottom: 10px;">Budget Burn Rate</h3>
+                    <div style="position: relative; height: 280px; width: 100%;">
+                        <canvas id="billingBurnChart" ></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="data-table-container" style="margin-top: 30px;">
+                <div style="padding: 20px; border-bottom: 1px solid #e2e8f0;">
+                    <h3 style="color: #0f172a; font-size: 1.1rem; margin: 0;">Invoice History</h3>
+                </div>
+                <table class="data-table">
+                    <thead><tr><th>Invoice ID</th><th>Date</th><th>Amount</th><th>Status</th><th>Action</th></tr></thead>
+                    <tbody>
+                        <tr><td style="font-weight: 600; color: #0f172a;">INV-2026-06</td><td>Jun 01, 2026</td><td>$48,500.00</td><td><span class="status-badge success">Paid</span></td><td><a href="404.html" style="color: #0ea5e9;"><i class="fa-solid fa-download"></i> PDF</a></td></tr>
+                        <tr><td style="font-weight: 600; color: #0f172a;">INV-2026-05</td><td>May 01, 2026</td><td>$45,200.00</td><td><span class="status-badge success">Paid</span></td><td><a href="404.html" style="color: #0ea5e9;"><i class="fa-solid fa-download"></i> PDF</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="dashboard-grid dash-split-2-1">
+                <div class="data-table-container" style="margin-top: 25px;">
+                    <div style="padding: 15px 20px; border-bottom: 1px solid #e2e8f0;"><h3 style="color: #0f172a; font-size: 1.05rem; margin: 0;"><i class="fa-solid fa-credit-card" style="color: #8b5cf6; margin-right: 8px;"></i> Recent Transactions (Live)</h3></div>
+                    <table class="data-table">
+                        <tbody>
+                            <tr><td><i class="fa-brands fa-cc-visa" style="font-size: 1.5rem; color: #1a1f71; vertical-align: middle; margin-right: 10px;"></i> Visa ending in 4242</td><td>Auto-Refill</td><td style="color: #64748b; font-size: 0.8rem;">Today, 09:41 AM</td><td style="text-align: right; font-weight: 700;">$5,000.00</td></tr>
+                            <tr><td><i class="fa-brands fa-cc-mastercard" style="font-size: 1.5rem; color: #eb001b; vertical-align: middle; margin-right: 10px;"></i> Master ending in 8812</td><td>Manual Payment</td><td style="color: #64748b; font-size: 0.8rem;">Yesterday, 14:22 PM</td><td style="text-align: right; font-weight: 700;">$2,500.00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="kpi-card" style="margin-top: 25px;">
+                    <h3 style="color: #0f172a; font-size: 1.05rem; margin-bottom: 15px;"><i class="fa-solid fa-shield-halved" style="color: #10b981; margin-right: 8px;"></i> Billing Security</h3>
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <i class="fa-solid fa-lock" style="font-size: 1.5rem; color: #cbd5e1;"></i>
+                        <div><strong style="display: block; font-size: 0.9rem; color: #0f172a;">256-bit Encryption</strong><span style="font-size: 0.75rem; color: #64748b;">Active</span></div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <i class="fa-solid fa-fingerprint" style="font-size: 1.5rem; color: #cbd5e1;"></i>
+                        <div><strong style="display: block; font-size: 0.9rem; color: #0f172a;">2FA Authentication</strong><span style="font-size: 0.75rem; color: #10b981; font-weight: 600;">Enabled</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Section -->
+        <div id="settings-section" class="content-section dashboard-content-wrapper">
+            <h2 style="color: #0f172a; font-family: 'Space Grotesk'; margin-bottom: 20px;">Tracking Pixels & Connections</h2>
+            <div class="dashboard-grid dash-split-1-2">
+                <div style="display: flex; flex-direction: column; gap: 25px;">
+                    <div class="kpi-card" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; align-items: center; gap: 20px;">
+                            <i class="fa-brands fa-meta" style="font-size: 2.5rem; color: #0668E1;"></i>
+                            <div><h4 style="font-size: 1.1rem; color: #0f172a; margin-bottom: 5px;">Meta CAPI</h4><p style="font-size: 0.85rem; color: #64748b;">Synced: 2m ago</p></div>
+                        </div>
+                        <span class="status-badge success">Active</span>
+                    </div>
+                    <div class="kpi-card" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; align-items: center; gap: 20px;">
+                            <i class="fa-brands fa-google" style="font-size: 2.5rem; color: #4285F4;"></i>
+                            <div><h4 style="font-size: 1.1rem; color: #0f172a; margin-bottom: 5px;">Google Tag</h4><p style="font-size: 0.85rem; color: #64748b;">Synced: 1h ago</p></div>
+                        </div>
+                        <span class="status-badge success">Active</span>
+                    </div>
+                    <div class="kpi-card" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; align-items: center; gap: 20px;">
+                            <i class="fa-brands fa-tiktok" style="font-size: 2.5rem; color: #000;"></i>
+                            <div><h4 style="font-size: 1.1rem; color: #0f172a; margin-bottom: 5px;">TikTok Pixel</h4><p style="font-size: 0.85rem; color: #dc2626;">Disconnected</p></div>
+                        </div>
+                        <button class="btn" style="background: #f1f5f9; padding: 4px 10px; font-size: 0.75rem;" >Reconnect</button>
+                    </div>
+                </div>
+                <div class="chart-container" style="margin-bottom: 0;">
+                    <h3 style="color: #0f172a; font-size: 1.1rem; margin-bottom: 10px;">Server API Latency (ms)</h3>
+                    <div style="position: relative; height: 280px; width: 100%;">
+                        <canvas id="apiLatencyChart" ></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-grid dash-split-2-1" style="margin-top: 25px;">
+                <div class="data-table-container" style="margin-bottom: 0;">
+                    <div style="padding: 15px 20px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="color: #0f172a; font-size: 1.05rem; margin: 0;"><i class="fa-solid fa-satellite-dish" style="color: #0ea5e9; margin-right: 8px;"></i> Live Event Stream</h3>
+                        <span style="font-size: 0.75rem; color: #16a34a; font-weight: 600;"><i class="fa-solid fa-circle" style="font-size: 0.5rem; margin-right: 4px; animation: pulse 2s infinite;"></i> Recording</span>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Event Type</th><th>Destination</th><th>Match Quality</th><th>Status</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="font-weight: 600;">Purchase</td><td><i class="fa-brands fa-meta" style="color: #0668E1; margin-right: 5px;"></i> Meta CAPI</td><td><span style="color: #16a34a; font-weight: 700;">Excellent (9.2)</span></td><td><span class="status-badge success">Processed</span></td></tr>
+                            <tr><td style="font-weight: 600;">AddToCart</td><td><i class="fa-brands fa-google" style="color: #4285F4; margin-right: 5px;"></i> Google Tag</td><td><span style="color: #f59e0b; font-weight: 700;">Good (7.4)</span></td><td><span class="status-badge success">Processed</span></td></tr>
+                            <tr><td style="font-weight: 600;">PageView</td><td><i class="fa-brands fa-tiktok" style="color: #000; margin-right: 5px;"></i> TikTok Pixel</td><td><span style="color: #ef4444; font-weight: 700;">Poor (3.1)</span></td><td><span class="status-badge warning">Deduplicated</span></td></tr>
+                            <tr><td style="font-weight: 600;">Lead</td><td><i class="fa-brands fa-meta" style="color: #0668E1; margin-right: 5px;"></i> Meta CAPI</td><td><span style="color: #16a34a; font-weight: 700;">Excellent (9.8)</span></td><td><span class="status-badge success">Processed</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="kpi-card" style="display: flex; flex-direction: column; height: 100%;">
+                    <h3 style="color: #0f172a; font-size: 1.05rem; margin-bottom: 20px;"><i class="fa-solid fa-shield-halved" style="color: #8b5cf6; margin-right: 8px;"></i> Event Match Quality</h3>
+                    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <div style="position: relative; width: 140px; height: 140px; border-radius: 50%; background: conic-gradient(#10b981 85%, #e2e8f0 0); display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                            <div style="width: 115px; height: 115px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; flex-direction: column; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);">
+                                <span style="font-size: 2.2rem; font-weight: 800; color: #0f172a; font-family: 'Space Grotesk';">8.5</span>
+                                <span style="font-size: 0.65rem; color: #64748b; text-transform: uppercase; font-weight: 700;">out of 10</span>
+                            </div>
+                        </div>
+                        <h4 style="margin: 0 0 8px 0; color: #0f172a; font-size: 1.1rem;">Excellent Rating</h4>
+                        <p style="font-size: 0.85rem; color: #64748b; margin: 0; padding: 0 10px;">Server-side tracking is successfully recovering 24% more data than browser-only.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+                       
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Tab Switching Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.sidebar-menu a[data-section]');
+            const sections = document.querySelectorAll('.content-section');
+            const consoleTitle = document.querySelector('.console-title');
+
+            // Force initial section visibility
+            const initialSection = document.getElementById('dashboard-section');
+            if (initialSection) {
+                initialSection.style.display = 'block';
+                initialSection.classList.add('active-visible');
+            }
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    // Sync console title with tab text for maximum clarity
+                    if (consoleTitle) {
+                        const tabSpan = tab.querySelector('span');
+                        if (tabSpan) consoleTitle.innerText = tabSpan.innerText;
+                    }
+
+                    sections.forEach(sec => {
+                        sec.style.display = 'none';
+                        sec.classList.remove('active-visible');
+                    });
+
+                    const targetId = tab.getAttribute('data-section') + '-section';
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.style.display = 'block';
+                        targetSection.classList.add('active-visible');
+                        
+                        // Scroll to top when changing tabs
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        
+                        // Force AOS refresh if available
+                        if (typeof AOS !== 'undefined') {
+                            AOS.refresh();
+                        }
+                    }
+
+                    if (window.innerWidth <= 1024) {
+                        const sidebar = document.getElementById('sidebar');
+                        if (sidebar) sidebar.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+                const menuToggle = document.getElementById('menuToggle');
+        if(menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                document.getElementById('sidebar').classList.toggle('active');
+            });
+        }
+        
+        // Identity Sync Display (Local Storage)
+        const emailDisplay = document.getElementById('userEmailDisplay');
+        if (emailDisplay) {
+            const savedEmail = localStorage.getItem('bankio_email');
+            if (savedEmail) {
+                emailDisplay.innerText = savedEmail;
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Chart.js for Realistic Dashboards -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Chart.defaults.font.family = "'Inter', sans-serif";
+            Chart.defaults.color = "#64748b";
+
+            const createChart = (id, config) => { if(document.getElementById(id)) new Chart(document.getElementById(id), config); };
+
+            /* --- USER DASHBOARD CHARTS --- */
+            createChart('revenueChart', {
+                type: 'line',
+                data: { labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], datasets: [{ label: 'Revenue', data: [12000, 19000, 15000, 22000, 18000, 28000, 24000], borderColor: '#0ea5e9', backgroundColor: 'rgba(14, 165, 233, 0.1)', borderWidth: 3, fill: true, tension: 0.4 }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+            });
+            createChart('trafficChart', {
+                type: 'doughnut',
+                data: { labels: ['Meta', 'Google', 'TikTok'], datasets: [{ data: [55, 30, 15], backgroundColor: ['#0668E1', '#4285F4', '#000000'], borderWidth: 0 }] },
+                options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { position: 'bottom' } } }
+            });
+            createChart('creativesScatterChart', {
+                type: 'line',
+                data: { 
+                    labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7', 'Day 8'], 
+                    datasets: [
+                        { label: 'UGC Video CTR', data: [1.2, 1.8, 2.1, 1.9, 3.5, 4.5, 4.0, 3.2], borderColor: '#10b981', backgroundColor: 'transparent', borderWidth: 3, tension: 0.4 },
+                        { label: 'Static Graphic CTR', data: [1.3, 2.1, 2.4, 2.0, 4.2, 5.8, 2.5, 3.8], borderColor: '#f97316', backgroundColor: 'transparent', borderWidth: 3, tension: 0.4 }
+                    ] 
+                },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { title: { display: true, text: 'CTR (%)' } } } }
+            });
+            createChart('leadsChart', {
+                type: 'bar',
+                data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], datasets: [{ label: 'Leads', data: [400, 600, 550, 800, 750, 950], backgroundColor: '#10b981', borderRadius: 4 }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+            });
+            createChart('leadsPieChart', {
+                type: 'pie',
+                data: { labels: ['High Intent', 'Med Intent', 'Low Intent'], datasets: [{ data: [65, 25, 10], backgroundColor: ['#16a34a', '#ca8a04', '#dc2626'], borderWidth: 0 }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+            });
+            createChart('billingBurnChart', {
+                type: 'line',
+                data: { labels: ['1st', '5th', '10th', '15th', '20th', '25th', '30th'], datasets: [{ label: 'Spend', data: [5000, 12000, 20000, 28000, 35000, 40000, 42850], borderColor: '#dc2626', borderWidth: 2, tension: 0.1 }, { label: 'Limit Target', data: [8000, 16000, 25000, 33000, 41000, 50000, 50000], borderColor: '#cbd5e1', borderDash: [5, 5], borderWidth: 2, tension: 0 }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+            });
+            createChart('apiLatencyChart', {
+                type: 'line',
+                data: { labels: ['-5m', '-4m', '-3m', '-2m', '-1m', 'Now'], datasets: [{ label: 'Ping (ms)', data: [45, 48, 42, 65, 43, 40], borderColor: '#0ea5e9', backgroundColor: 'rgba(14, 165, 233, 0.2)', borderWidth: 2, fill: true, tension: 0.3 }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, animation: { duration: 0 } } // fake real-time
+            });
+
+            /* --- ADMIN DASHBOARD CHARTS --- */
+            createChart('adminSpendChart', {
+                type: 'line',
+                data: { labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'], datasets: [{ label: 'Global Spend', data: [450000, 520000, 600000, 880000], borderColor: '#8b5cf6', backgroundColor: 'rgba(139, 92, 246, 0.1)', borderWidth: 3, fill: true, tension: 0.4 }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+            });
+            createChart('adminPlatformChart', {
+                type: 'doughnut',
+                data: { labels: ['Meta', 'Google', 'TikTok', 'LinkedIn'], datasets: [{ data: [48, 34, 15, 3], backgroundColor: ['#0668E1', '#4285F4', '#000000', '#0a66c2'], borderWidth: 0 }] },
+                options: { responsive: true, maintainAspectRatio: false, cutout: '70%', plugins: { legend: { position: 'bottom' } } }
+            });
+            createChart('portfolioDoughnutChart', {
+                type: 'doughnut',
+                data: { labels: ['Excellent', 'Good', 'Warning'], datasets: [{ data: [25, 12, 5], backgroundColor: ['#16a34a', '#3b82f6', '#f59e0b'], borderWidth: 0 }] },
+                options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { position: 'bottom' } } }
+            });
+            createChart('campaignsStackedBar', {
+                type: 'bar',
+                data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], datasets: [{ label: 'Meta', data: [0.8, 0.9, 1.0, 1.1, 1.2, 1.2], backgroundColor: '#0668E1' }, { label: 'Google', data: [0.5, 0.6, 0.7, 0.7, 0.8, 0.85], backgroundColor: '#4285F4' }, { label: 'TikTok', data: [0.1, 0.2, 0.25, 0.3, 0.35, 0.4], backgroundColor: '#000000' }] },
+                options: { responsive: true, maintainAspectRatio: false, scales: { x: { stacked: true }, y: { stacked: true } }, plugins: { legend: { position: 'bottom' } } }
+            });
+            createChart('vaultPolarChart', {
+                type: 'polarArea',
+                data: { labels: ['UGC Videos', 'Static Graphics', 'Carousels', 'Motion Design'], datasets: [{ data: [120, 85, 40, 25], backgroundColor: ['rgba(22, 163, 74, 0.5)', 'rgba(14, 165, 233, 0.5)', 'rgba(245, 158, 11, 0.5)', 'rgba(139, 92, 246, 0.5)'] }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right' } } }
+            });
+            createChart('webhookVolumeChart', {
+                type: 'bar',
+                data: { labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'], datasets: [{ label: 'Payloads/hr', data: [12000, 15000, 35000, 42000, 38000, 25000], backgroundColor: '#8b5cf6', borderRadius: 4 }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+

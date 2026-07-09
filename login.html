@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Network Sync | DigiPulse Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <style>
+        .login-container { 
+            position: relative; 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden; 
+            padding: 20px; 
+            background: var(--dark);
+        }
+        .login-bg { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            z-index: 1; 
+            opacity: 0.2;
+        }
+        .login-overlay { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: radial-gradient(circle at center, transparent 0%, var(--dark) 100%); 
+            z-index: 2; 
+        }
+        .login-card { 
+            position: relative; 
+            z-index: 10; 
+            max-width: 480px; 
+            width: 100%; 
+            padding: 40px; 
+            background: var(--dark-alt); 
+            backdrop-filter: blur(20px); 
+            border-radius: 20px; 
+            border: 1px solid rgba(222, 31, 38, 0.2); 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); 
+            text-align: center; 
+        }
+        .form-group {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--white);
+            font-family: 'Space Grotesk';
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--dark);
+            color: var(--white);
+            font-family: 'Inter';
+            transition: var(--transition);
+            outline: none;
+        }
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(222, 31, 38, 0.2);
+        }
+        
+        /* 1024px Landscape Tablet */
+        @media (max-width: 1024px) {
+            .login-card { padding: 45px; max-width: 450px; }
+        }
+        /* 768px Portrait Tablet */
+        @media (max-width: 768px) {
+            .login-card { padding: 40px; max-width: 400px; }
+            h2 { font-size: 1.8rem; }
+        }
+        /* 425px Large Mobile */
+        @media (max-width: 425px) {
+            .login-card { padding: 30px; max-width: 100%; box-shadow: none; border: none; background: transparent;}
+            .login-bg, .login-overlay { opacity: 0.05; }
+            .login-container { align-items: flex-start; padding-top: 50px;}
+        }
+        /* 375px Mini Mobile */
+        @media (max-width: 375px) {
+            .login-card { padding: 20px; }
+            h2 { font-size: 1.5rem; }
+            .logo-icon { height: 80px !important; }
+            .form-group input, .form-group select { padding: 12px 14px; }
+        }
+    </style>
+    <link rel="icon" type="image/webp" href="assets/stackly logo RED.webp">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="bankio-loader">
+        <div class="bankio-loader-text">LOADING...</div>
+    </div>
+
+    <div class="login-container">
+        <img src="assets/hero_bg.webp" alt="Data Network Background" class="login-bg">
+        <div class="login-overlay"></div>
+        <div class="login-card" data-aos="fade-up">
+            <a href="index.html" style="position: absolute; top: 20px; left: 20px; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500;">&#8592; Back to Home</a>
+            <a href="index.html" class="logo" style="margin-bottom: 10px; display: inline-block; margin-top: 15px;">
+                <img src="assets/stackly logo RED.webp" alt="Stackly Logo" class="logo-icon" style="height: 100px;">
+            </a>
+            <h2 style="color: var(--white); margin-bottom: 10px; font-family: 'Space Grotesk';">Login</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 35px;">Login to your account to continue.</p>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>User Role</label>
+                    <select id="userRole" required>
+                        <option value="" disabled selected>Select role</option>
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 35px; font-size: 0.85rem;">
+                    <label style="color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                        <input type="checkbox" style="width: auto; margin: 0;"> Remember me
+                    </label>
+                    <a href="404.html" style="color: var(--primary); text-decoration: none;">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-weight: 700;">Login</button>
+            </form>
+
+            <p style="margin-top: 30px; color: var(--text-muted); font-size: 0.9rem;">
+                Don't have an account? <a href="signup.html" style="color: var(--primary); font-weight: 700; text-decoration: none;">Sign up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Login Logic -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const role = document.getElementById('userRole').value;
+            const email = e.target.querySelector('input[type="email"]').value;
+            
+            
+            
+            
+            try {
+                localStorage.setItem('bankio_email', email);
+                localStorage.setItem('bankio_role', role);
+                const roleSelect = document.getElementById('userRole');
+                const roleText = roleSelect.options[roleSelect.selectedIndex].text;
+                localStorage.setItem('bankio_role_text', roleText);
+            } catch (e) {
+                console.warn('localStorage disabled.');
+            }
+            
+            const roleSelectURL = document.getElementById('userRole');
+            const roleTextURL = roleSelectURL.options[roleSelectURL.selectedIndex].text;
+            const params = "?email=" + encodeURIComponent(email) + "&role=" + encodeURIComponent(roleTextURL);
+
+            if (role === 'admin') {
+                window.location.href = 'dashboard-admin.html' + params;
+            } else {
+                window.location.href = 'dashboard-user.html' + params;
+            }
+
+
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
